@@ -1,0 +1,17 @@
+D:\N03_QTCSDLHD_Agoda\BUS\bin\Debug\net6.0-windows\BUS.deps.json
+D:\N03_QTCSDLHD_Agoda\BUS\bin\Debug\net6.0-windows\BUS.dll
+D:\N03_QTCSDLHD_Agoda\BUS\bin\Debug\net6.0-windows\BUS.pdb
+D:\N03_QTCSDLHD_Agoda\BUS\bin\Debug\net6.0-windows\DAO.dll
+D:\N03_QTCSDLHD_Agoda\BUS\bin\Debug\net6.0-windows\DTO.dll
+D:\N03_QTCSDLHD_Agoda\BUS\bin\Debug\net6.0-windows\DAO.pdb
+D:\N03_QTCSDLHD_Agoda\BUS\bin\Debug\net6.0-windows\DTO.pdb
+D:\N03_QTCSDLHD_Agoda\BUS\obj\Debug\net6.0-windows\BUS.csproj.AssemblyReference.cache
+D:\N03_QTCSDLHD_Agoda\BUS\obj\Debug\net6.0-windows\BUS.GeneratedMSBuildEditorConfig.editorconfig
+D:\N03_QTCSDLHD_Agoda\BUS\obj\Debug\net6.0-windows\BUS.AssemblyInfoInputs.cache
+D:\N03_QTCSDLHD_Agoda\BUS\obj\Debug\net6.0-windows\BUS.AssemblyInfo.cs
+D:\N03_QTCSDLHD_Agoda\BUS\obj\Debug\net6.0-windows\BUS.csproj.CoreCompileInputs.cache
+D:\N03_QTCSDLHD_Agoda\BUS\obj\Debug\net6.0-windows\BUS.csproj.CopyComplete
+D:\N03_QTCSDLHD_Agoda\BUS\obj\Debug\net6.0-windows\BUS.dll
+D:\N03_QTCSDLHD_Agoda\BUS\obj\Debug\net6.0-windows\refint\BUS.dll
+D:\N03_QTCSDLHD_Agoda\BUS\obj\Debug\net6.0-windows\BUS.pdb
+D:\N03_QTCSDLHD_Agoda\BUS\obj\Debug\net6.0-windows\ref\BUS.dll

@@ -1,0 +1,12 @@
+D:\N03_QTCSDLHD_Agoda\DTO\bin\Debug\net6.0-windows\DTO.deps.json
+D:\N03_QTCSDLHD_Agoda\DTO\bin\Debug\net6.0-windows\DTO.dll
+D:\N03_QTCSDLHD_Agoda\DTO\bin\Debug\net6.0-windows\DTO.pdb
+D:\N03_QTCSDLHD_Agoda\DTO\obj\Debug\net6.0-windows\DTO.csproj.AssemblyReference.cache
+D:\N03_QTCSDLHD_Agoda\DTO\obj\Debug\net6.0-windows\DTO.GeneratedMSBuildEditorConfig.editorconfig
+D:\N03_QTCSDLHD_Agoda\DTO\obj\Debug\net6.0-windows\DTO.AssemblyInfoInputs.cache
+D:\N03_QTCSDLHD_Agoda\DTO\obj\Debug\net6.0-windows\DTO.AssemblyInfo.cs
+D:\N03_QTCSDLHD_Agoda\DTO\obj\Debug\net6.0-windows\DTO.csproj.CoreCompileInputs.cache
+D:\N03_QTCSDLHD_Agoda\DTO\obj\Debug\net6.0-windows\DTO.dll
+D:\N03_QTCSDLHD_Agoda\DTO\obj\Debug\net6.0-windows\refint\DTO.dll
+D:\N03_QTCSDLHD_Agoda\DTO\obj\Debug\net6.0-windows\DTO.pdb
+D:\N03_QTCSDLHD_Agoda\DTO\obj\Debug\net6.0-windows\ref\DTO.dll

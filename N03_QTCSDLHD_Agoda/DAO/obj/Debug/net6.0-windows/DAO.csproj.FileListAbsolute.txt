@@ -1,0 +1,15 @@
+D:\N03_QTCSDLHD_Agoda\DAO\bin\Debug\net6.0-windows\DAO.deps.json
+D:\N03_QTCSDLHD_Agoda\DAO\bin\Debug\net6.0-windows\DAO.dll
+D:\N03_QTCSDLHD_Agoda\DAO\bin\Debug\net6.0-windows\DAO.pdb
+D:\N03_QTCSDLHD_Agoda\DAO\bin\Debug\net6.0-windows\DTO.dll
+D:\N03_QTCSDLHD_Agoda\DAO\bin\Debug\net6.0-windows\DTO.pdb
+D:\N03_QTCSDLHD_Agoda\DAO\obj\Debug\net6.0-windows\DAO.csproj.AssemblyReference.cache
+D:\N03_QTCSDLHD_Agoda\DAO\obj\Debug\net6.0-windows\DAO.GeneratedMSBuildEditorConfig.editorconfig
+D:\N03_QTCSDLHD_Agoda\DAO\obj\Debug\net6.0-windows\DAO.AssemblyInfoInputs.cache
+D:\N03_QTCSDLHD_Agoda\DAO\obj\Debug\net6.0-windows\DAO.AssemblyInfo.cs
+D:\N03_QTCSDLHD_Agoda\DAO\obj\Debug\net6.0-windows\DAO.csproj.CoreCompileInputs.cache
+D:\N03_QTCSDLHD_Agoda\DAO\obj\Debug\net6.0-windows\DAO.csproj.CopyComplete
+D:\N03_QTCSDLHD_Agoda\DAO\obj\Debug\net6.0-windows\DAO.dll
+D:\N03_QTCSDLHD_Agoda\DAO\obj\Debug\net6.0-windows\refint\DAO.dll
+D:\N03_QTCSDLHD_Agoda\DAO\obj\Debug\net6.0-windows\DAO.pdb
+D:\N03_QTCSDLHD_Agoda\DAO\obj\Debug\net6.0-windows\ref\DAO.dll
