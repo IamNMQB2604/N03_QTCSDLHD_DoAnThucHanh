@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\N03_QTCSDLHD_Agoda\GUI\obj\Debug\net6.0-windows\
+D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\obj\Debug\net6.0-windows\
 GUI
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\N03_QTCSDLHD_Agoda\GUI\App.xaml
-5-1233688516
+D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\App.xaml
+7-4025660
 
-9578922921
-211-1251706888
-DatVeMayBay.xaml;Test.xaml;XemChuyenBay.xaml;XemGioHang.xaml;XemThongTinVe.xaml;
+11-643596898
+2111159036082
+DatVeMayBay.xaml;Login.xaml;Test.xaml;XemChiTietChuyenBay.xaml;XemChuyenBay.xaml;XemGioHang.xaml;XemThongTinVe.xaml;
 
-True
+False
 

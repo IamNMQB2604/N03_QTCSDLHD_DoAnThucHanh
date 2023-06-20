@@ -20,7 +20,7 @@ namespace GUI
     /// </summary>
     public partial class DatVeMayBay : Window
     {
-        public DatVeMayBay(ChuyenBay chuyenBay)
+        public DatVeMayBay(int id,ChuyenBay chuyenBay)
         {
             InitializeComponent();
             

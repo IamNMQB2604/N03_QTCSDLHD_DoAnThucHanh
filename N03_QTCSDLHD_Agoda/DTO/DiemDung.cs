@@ -14,6 +14,6 @@ namespace DTO
         [BsonElement("thoiGian")]
         public DateTime Date { get; set; }
         [BsonElement("diaDiem")]
-        public string? DiaDiem { get; set; }
+        public string DiaDiem { get; set; }
     }
 }

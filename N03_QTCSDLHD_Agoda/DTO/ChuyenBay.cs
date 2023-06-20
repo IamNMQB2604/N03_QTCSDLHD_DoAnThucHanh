@@ -28,7 +28,7 @@ namespace DTO
         [BsonElement("diemDung")]
         public int diemDung { get; set; }
         [BsonElement("chiTietChuyenBay")]
-        public ChiTietChuyenBay ? chiTietChuyenBay { get; set; }
+        public ChiTietChuyenBay  chiTietChuyenBay { get; set; }
         [BsonElement("hangVe")]
         public string? hangVe { get; set; }
     }

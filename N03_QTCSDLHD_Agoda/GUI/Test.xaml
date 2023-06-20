@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Test" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="DITMEMAY" HorizontalAlignment="Left" Height="168" Margin="77,88,0,0" VerticalAlignment="Top" Width="462" />
+        <TextBlock x:Name="TestTING" HorizontalAlignment="Left" Height="238" Margin="233,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="267"/>
     </Grid>
 </Window>

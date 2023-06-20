@@ -20,11 +20,13 @@ namespace GUI
     /// </summary>
     public partial class XemChuyenBay : Window
     {
+        int _id;
         ChuyenBay_BUS chuyenBayBussiness = new ChuyenBay_BUS();
-        public XemChuyenBay()
+        public XemChuyenBay(int id)
         {
             InitializeComponent();
             HienThiDanhSachChuyenBay();
+            _id=id;
         }
         private void HienThiDanhSachChuyenBay()
         {
@@ -37,11 +39,15 @@ namespace GUI
             {
                 MessageBox.Show("Có data");
                 dgvChuyenBay.ItemsSource = dsChuyenBay;
-                //dgvChuyenBay.Items.Refresh();
+                dgvChuyenBay.Items.Refresh();
             }
         }
         private void btn_ChiTiet_Click(object sender, RoutedEventArgs e)
         {
+            ChuyenBay? ChuyenBay_Selected = dgvChuyenBay.SelectedItem as ChuyenBay;
+            XemChiTietChuyenBay xemChiTietChuyenBay_UI = new XemChiTietChuyenBay(_id,ChuyenBay_Selected);
+            xemChiTietChuyenBay_UI.Show();
+            this.Close();
 
         }
 
@@ -53,7 +59,7 @@ namespace GUI
         private void btnChonChuyenBay_Click(object sender, RoutedEventArgs e)
         {
             ChuyenBay ? ChuyenBay_Selected = dgvChuyenBay.SelectedItem as ChuyenBay;
-            DatVeMayBay datVeMayBay_UI = new DatVeMayBay(ChuyenBay_Selected);
+            DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id,ChuyenBay_Selected);
             datVeMayBay_UI.Show();
             this.Close();
         }

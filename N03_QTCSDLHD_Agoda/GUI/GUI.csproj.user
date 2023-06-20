@@ -10,7 +10,13 @@
     <Compile Update="DatVeMayBay.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Test.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="XemChiTietChuyenBay.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="XemChuyenBay.xaml.cs">
@@ -27,7 +33,13 @@
     <Page Update="DatVeMayBay.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Test.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="XemChiTietChuyenBay.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="XemChuyenBay.xaml">

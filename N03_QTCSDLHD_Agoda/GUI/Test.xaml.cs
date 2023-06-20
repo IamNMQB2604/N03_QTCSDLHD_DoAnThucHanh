@@ -14,7 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MongoDB.Driver;
 using MongoDB.Bson.Serialization.Attributes;
-
+using DTO;
+using BUS;
 namespace GUI
 {
     /// <summary>
@@ -22,29 +23,22 @@ namespace GUI
     /// </summary>
     public partial class Test : Window
     {
+        Login_BUS loginBussiness = new Login_BUS();
+
         public Test()
         {
             InitializeComponent();
-            Hehe();
-
-        }
-        private void Hehe()
-        {
-            var client = new MongoClient("mongodb://127.0.0.1:27017");
-            var db = client.GetDatabase("QuanLyVeMayBay");
-            var collection = db.GetCollection<ChuyenBay>("ChuyenBay");
-            List<ChuyenBay> danhSachChuyenBay = new List<ChuyenBay>();
-            danhSachChuyenBay = collection.Find(_ => true).ToList();
-            DITMEMAY.ItemsSource = danhSachChuyenBay;
-            DITMEMAY.Items.Refresh();
-
-        }
-        public class ChuyenBay
-        {
-            [BsonId]
-            public int _id { get; set; }
-            [BsonElement("hangHangKhong")]
-            public string? hangHangKhong { get; set; }
+            /*
+            KhachHang khachHang = loginBussiness.LayThongTinKhachHang("1234", "1234");
+            if (khachHang != null)
+            {
+                TestTING.Text = khachHang.email;
+            }
+            else
+            {
+                TestTING.Text = "Cặc";
+            }
+            */
         }
     }
 }

@@ -8,12 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Image\agoda.png" />
+    <None Remove="Image\anhMayBay.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj" />
     <ProjectReference Include="..\DTO\DTO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\agoda.png" />
+    <Resource Include="Image\anhMayBay.jpg" />
   </ItemGroup>
 
 </Project>

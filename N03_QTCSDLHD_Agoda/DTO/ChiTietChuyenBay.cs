@@ -17,6 +17,9 @@ namespace DTO
         public string ? sanBayDi { get; set; }
         [BsonElement("sanBayDen")]
         public string ? sanBayDen { get; set; }
-        public List<DiemDung> ? diemDung { get; set; }
+        [BsonElement("diemDung")]
+        public List<DiemDung>  diemDung { get; set; }
+        [BsonElement("moTa")]
+        public string? moTa { get; set; }
     }
 }

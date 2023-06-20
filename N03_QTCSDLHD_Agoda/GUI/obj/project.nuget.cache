@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w6pG8J1dDqtVA7NvfFajT+7eZ1XKibvwW+i4Qtp6I+pQ0ey2i7m7n24M4kTqguH0GXuxOj7sYJ2eeaufz9fXJQ==",
+  "dgSpecHash": "KIHAUYzsZ4b0EebaFHw0Fz1LlQL2HPYhjoeh83YKXAAeoCSnrD6II0/eBI6+l3VxxiHb7EXBtsPaLAiZYvvSAA==",
   "success": true,
-  "projectFilePath": "D:\\N03_QTCSDLHD_Agoda\\GUI\\GUI.csproj",
+  "projectFilePath": "D:\\N03_QTCSDLHD_DoAnThucHanh\\N03_QTCSDLHD_Agoda\\GUI\\GUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
