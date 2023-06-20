@@ -7,6 +7,70 @@
         mc:Ignorable="d"
         Title="DatVeMayBay" Height="450" Width="800">
     <Grid>
-        <Label Content="ĐẶT VÉ MÁY BAY" HorizontalAlignment="Left" Margin="320,25,0,0" VerticalAlignment="Top" Height="38" Width="212" FontFamily="Bold" FontSize="24" FontWeight="Bold" Foreground="Red"/>
+        <Label Content="ĐẶT VÉ MÁY BAY" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="38" Width="212" FontFamily="Bold" FontSize="24" FontWeight="Bold" Foreground="Red"/>
+        <Button Content="QUAY LẠI" x:Name="btn_QuayLai" HorizontalAlignment="Left" Margin="37,14,0,0" VerticalAlignment="Top" Click="btn_QuayLai_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="39,289,0,0" TextWrapping="Wrap" x:Name="TextBlock_maQuocGia" Text="MÃ QUỐC GIA" VerticalAlignment="Top" Height="20" Width="79"/>
+        <TextBlock HorizontalAlignment="Left" Margin="39,319,0,0" TextWrapping="Wrap" x:Name="TextBlock_sdt" Text="SỐ ĐIỆN THOẠI" VerticalAlignment="Top" Height="20" Width="100"/>
+        <TextBox x:Name="TextBox_sdt" HorizontalAlignment="Left" Margin="145,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="39,349,0,0" TextWrapping="Wrap" x:Name="TextBlock_email" Text="EMAIL" VerticalAlignment="Top" Height="20" Width="100"/>
+        <TextBox x:Name="TextBox_email" HorizontalAlignment="Left" Margin="145,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="39,379,0,0" TextWrapping="Wrap" x:Name="TextBlock_soHanhKhach" Text="SỐ HÀNH KHÁCH" VerticalAlignment="Top" Height="20" Width="100"/>
+        <TextBox x:Name="TextBox_soHanhKhach" HorizontalAlignment="Left" Margin="145,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btn_thanhToan" Content="THANH TOÁN" HorizontalAlignment="Left" Margin="634,16,0,0" VerticalAlignment="Top" Click="btn_tiepTuc_Click" Background="#FF35DA57" FontSize="12" Width="138"/>
+        <TextBox x:Name="tbChiTietChuyenBay"
+            HorizontalAlignment="Left"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            Height="207"
+            FontSize="14"
+            Margin="33,65,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="270" />
+        <TextBlock HorizontalAlignment="Left" Margin="338,72,0,0" TextWrapping="Wrap" x:Name="TextBlock_hoTen" Text="HỌ TÊN" VerticalAlignment="Top" Height="20" Width="79"/>
+        <TextBox x:Name="TextBox_hoTen" HorizontalAlignment="Left" Margin="444,67,0,0" TextWrapping="Wrap" Text="84" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="338,102,0,0" TextWrapping="Wrap" x:Name="TextBlock_gioiTinh" Text="GIỚI TÍNH" VerticalAlignment="Top" Height="20" Width="100"/>
+        <TextBox x:Name="TextBox_gioiTinh" HorizontalAlignment="Left" Margin="444,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="338,132,0,0" TextWrapping="Wrap" x:Name="TextBlock_ngaySinh" Text="NGÀY SINH" VerticalAlignment="Top" Height="20" Width="100"/>
+        <TextBlock HorizontalAlignment="Left" Margin="338,162,0,0" TextWrapping="Wrap" x:Name="TextBlock_quocTich" Text="QUỐC TỊCH" VerticalAlignment="Top" Height="20" Width="100"/>
+        <DatePicker x:Name="datapicker_ngaySinh" HorizontalAlignment="Left" Margin="444,127,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.314,0.635"/>
+        <ComboBox x:Name="combobox_quocTich" HorizontalAlignment="Left" Margin="444,157,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="338,192,0,0" TextWrapping="Wrap" x:Name="TextBlock_hanhLy" Text="SỐ KG HÀNH LÝ" VerticalAlignment="Top" Height="20" Width="100"/>
+        <TextBox x:Name="TextBox_hanhLyKg" HorizontalAlignment="Left" Margin="444,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46"/>
+        <TextBlock HorizontalAlignment="Left" Margin="338,222,0,0" TextWrapping="Wrap" x:Name="TextBlock_maGhe" Text="MÃ GHẾ" VerticalAlignment="Top" Height="20" Width="100"/>
+        <TextBox x:Name="TextBox_maGhe" HorizontalAlignment="Left" Margin="444,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46"/>
+        <DataGrid x:Name="dgvChuyenBay" 
+                  HorizontalAlignment="Left" 
+                  Height="114" Margin="309,287,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="472" 
+                  FontSize="16"
+                  CanUserAddRows="False"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Họ tên"
+                                    Binding="{Binding hoTen}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ngày sinh"
+                                    Binding="{Binding ngaySinh, StringFormat='dd/MM/yyyy HH:mm:ss'}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Hành lý"
+                                    Binding="{Binding hanhLy.soKg}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Mã ghế"
+                                    Binding="{Binding choNgoi.maGhe}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btn_huyHanhKhach" Content="HỦY HÀNH KHÁCH" HorizontalAlignment="Left" Margin="634,107,0,0" VerticalAlignment="Top" FontSize="12" Background="#FFE65B5B"/>
+        <Button x:Name="btn_themHanhKhach" Content="THÊM HÀNH KHÁCH" HorizontalAlignment="Left" Margin="634,60,0,0" VerticalAlignment="Top" FontSize="12" Width="138" Click="btn_themHanhKhach_Click"/>
+        <TextBox x:Name="TextBox_hanhLyThanhTien" HorizontalAlignment="Left" Margin="499,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65"/>
+        <TextBox x:Name="TextBox_maGheThanhTien" HorizontalAlignment="Left" Margin="499,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65"/>
+        <ComboBox x:Name="combobox_maQuocGia" HorizontalAlignment="Left" Margin="145,282,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="84"/>
+            <ComboBoxItem Content="85"/>
+            <ComboBoxItem Content="86"/>
+            <ComboBoxItem Content="87"/>
+            <ComboBoxItem Content="88"/>
+        </ComboBox>
     </Grid>
 </Window>

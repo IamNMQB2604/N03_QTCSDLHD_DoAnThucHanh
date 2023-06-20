@@ -20,10 +20,48 @@ namespace GUI
     /// </summary>
     public partial class DatVeMayBay : Window
     {
+        int _id_NguoiDung; // tao bien cuc bo nhan id NguoiDung 
+        ChuyenBay _chuyenBay;
         public DatVeMayBay(int id,ChuyenBay chuyenBay)
         {
             InitializeComponent();
+            _id_NguoiDung = id; //gan gia tri cua id NguoiDung vao bien cuc bo
+            _chuyenBay = chuyenBay;
+            HienThiThongTinChuyenBay(chuyenBay);
             
+;        }
+
+        private void HienThiThongTinChuyenBay(ChuyenBay chuyenBay)
+        {
+            tbChiTietChuyenBay.Text = "Hãng hàng không: " + chuyenBay.hangHangKhong + '\n'
+                + "Thời điểm đi: " + chuyenBay.thoiDiemDi.ToString("dd/MM/yy HH:mm:ss") + '\n'
+                + "Thời điểm đến: " + chuyenBay.thoiDiemDen.ToString("dd/MM/yy HH:mm:ss") + '\n'
+                + "Gía vé mỗi hành khách: " + chuyenBay.giaVe + '\n'
+                + "Điểm xuất phát: " + chuyenBay.diemXuatPhat + '\n'
+                + "Điểm dừng: " + chuyenBay.diemDung + '\n'
+                + "Điểm đến: " + chuyenBay.diemDen + '\n'
+                + "Thời gian bay: " + chuyenBay.thoiGianBay + "\n"
+                + "Hạng vé: " + chuyenBay.hangVe + "\n";
+        }
+        private void btn_QuayLai_Click(object sender, RoutedEventArgs e)
+        {
+            XemChuyenBay xemChuyenBay_UI = new XemChuyenBay(_id_NguoiDung);
+            xemChuyenBay_UI.Show();
+            this.Close();
+
+        }
+
+        private void btn_tiepTuc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_themHanhKhach_Click(object sender, RoutedEventArgs e)
+        {
+            //HanhLy tempHanhLy = new HanhLy(TextBox_hanhLyKg, TextBox_hanhLyThanhTien);
+            //HanhKhach tempHanhKhach = new HanhKhach(TextBox_hoTen.Text, TextBox_gioiTinh.Text, datapicker_ngaySinh, combobox_quocTich.Text, );
+            //List<HanhKhach> dsHanhKhach;
+            //dsHanhKhach.Add()
         }
     }
 }
