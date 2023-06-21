@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DTO;
 using BUS;
+using static System.Net.Mime.MediaTypeNames;
+
 namespace GUI
 {
     /// <summary>
@@ -88,6 +90,7 @@ namespace GUI
         };
         int _id;
         ChuyenBay_BUS chuyenBayBussiness = new ChuyenBay_BUS();
+        List<ChuyenBay> danhSachChuyenBay = new List<ChuyenBay>();
         public XemChuyenBay(int id)
         {
             InitializeComponent();
@@ -110,25 +113,57 @@ namespace GUI
                 dgvChuyenBay.ItemsSource = dsChuyenBay;
                 dgvChuyenBay.Items.Refresh();
             }
+            danhSachChuyenBay = dsChuyenBay;
         }
         private void btn_ChiTiet_Click(object sender, RoutedEventArgs e)
         {
-            ChuyenBay? ChuyenBay_Selected = dgvChuyenBay.SelectedItem as ChuyenBay;
-            XemChiTietChuyenBay xemChiTietChuyenBay_UI = new XemChiTietChuyenBay(_id,ChuyenBay_Selected);
+            //Mảng ChuyenBay temp để lưu danh sách chuyến bay người dùng chọn 
+            List<ChuyenBay> danhSachChuyenBayTemp = new List<ChuyenBay>();
+            int j = 0;
+            for (int i = 0; i < dgvChuyenBay.Items.Count; i++)
+            {
+                CheckBox mycheckbox = dgvChuyenBay.Columns[0].GetCellContent(dgvChuyenBay.Items[i]) as CheckBox;
+                if (mycheckbox.IsChecked == true)
+                {
+                    danhSachChuyenBayTemp.Add(danhSachChuyenBay[i]);
+                }
+            }
+            XemChiTietChuyenBay xemChiTietChuyenBay_UI = new XemChiTietChuyenBay(_id, danhSachChuyenBayTemp);
             xemChiTietChuyenBay_UI.Show();
             this.Close();
-
         }
-
         private void btnThemXeDayHang_Click(object sender, RoutedEventArgs e)
         {
-            
+            //Màng ChuyenBay temp để lưu danh sách chuyến bay người dùng chọn
+            // Truy xuất thêm vào giỏ hàng từ mảng danhsachChuyenBayTemp
+            List<ChuyenBay> danhSachChuyenBayTemp = new List<ChuyenBay>();
+            int j = 0;
+            for (int i = 0; i < dgvChuyenBay.Items.Count; i++)
+            {
+                CheckBox mycheckbox = dgvChuyenBay.Columns[0].GetCellContent(dgvChuyenBay.Items[i]) as CheckBox;
+                if (mycheckbox.IsChecked == true)
+                {
+                    danhSachChuyenBayTemp.Add(danhSachChuyenBay[i]);
+                }
+            }
         }
 
         private void btnChonChuyenBay_Click(object sender, RoutedEventArgs e)
         {
+            //Mảng danhSachChuyenBayTemp để lưu danh sách chuyến bay người dùng chọn
+            // Truy xuất thêm dữ liệu vé từ mảng này
+            List<ChuyenBay> danhSachChuyenBayTemp = new List<ChuyenBay>();
+            int j = 0;
+            for (int i = 0; i < dgvChuyenBay.Items.Count; i++)
+            {
+                CheckBox mycheckbox = dgvChuyenBay.Columns[0].GetCellContent(dgvChuyenBay.Items[i]) as CheckBox;
+                if (mycheckbox.IsChecked == true)
+                {
+                    danhSachChuyenBayTemp.Add(danhSachChuyenBay[i]);
+                }
+            }
             ChuyenBay ? ChuyenBay_Selected = dgvChuyenBay.SelectedItem as ChuyenBay;
-            DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id,ChuyenBay_Selected);
+            DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id,danhSachChuyenBayTemp);
             datVeMayBay_UI.Show();
             this.Close();
         }
