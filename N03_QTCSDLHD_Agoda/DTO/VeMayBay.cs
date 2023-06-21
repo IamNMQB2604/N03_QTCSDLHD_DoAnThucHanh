@@ -35,7 +35,7 @@ namespace DTO
         public TheTinDung? theTinDung { get; set; }
 
         [BsonElement("ngayDatVe")]
-        public DateOnly? ngayDatVe { get; set; }
+        public string? ngayDatVe { get; set; }
 
     }
 }

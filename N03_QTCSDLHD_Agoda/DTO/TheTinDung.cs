@@ -17,6 +17,6 @@ namespace DTO
         public string? soThe { get; set; }
 
         [BsonElement("ngayHetHan")]
-        public DateOnly ngayHetHan { get; set; }
+        public string? ngayHetHan { get; set; }
     }
 }

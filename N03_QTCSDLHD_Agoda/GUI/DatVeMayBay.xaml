@@ -16,7 +16,6 @@
         <TextBox x:Name="TextBox_email" HorizontalAlignment="Left" Margin="145,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="39,379,0,0" TextWrapping="Wrap" x:Name="TextBlock_soHanhKhach" Text="SỐ HÀNH KHÁCH" VerticalAlignment="Top" Height="20" Width="100"/>
         <TextBox x:Name="TextBox_soHanhKhach" HorizontalAlignment="Left" Margin="145,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btn_thanhToan" Content="THANH TOÁN" HorizontalAlignment="Left" Margin="634,16,0,0" VerticalAlignment="Top" Click="btn_tiepTuc_Click" Background="#FF35DA57" FontSize="12" Width="138"/>
         <TextBox x:Name="tbChiTietChuyenBay"
             HorizontalAlignment="Left"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -29,7 +28,6 @@
         <TextBlock HorizontalAlignment="Left" Margin="338,72,0,0" TextWrapping="Wrap" x:Name="TextBlock_hoTen" Text="HỌ TÊN" VerticalAlignment="Top" Height="20" Width="79"/>
         <TextBox x:Name="TextBox_hoTen" HorizontalAlignment="Left" Margin="444,67,0,0" TextWrapping="Wrap" Text="84" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="338,102,0,0" TextWrapping="Wrap" x:Name="TextBlock_gioiTinh" Text="GIỚI TÍNH" VerticalAlignment="Top" Height="20" Width="100"/>
-        <TextBox x:Name="TextBox_gioiTinh" HorizontalAlignment="Left" Margin="444,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="338,132,0,0" TextWrapping="Wrap" x:Name="TextBlock_ngaySinh" Text="NGÀY SINH" VerticalAlignment="Top" Height="20" Width="100"/>
         <TextBlock HorizontalAlignment="Left" Margin="338,162,0,0" TextWrapping="Wrap" x:Name="TextBlock_quocTich" Text="QUỐC TỊCH" VerticalAlignment="Top" Height="20" Width="100"/>
         <DatePicker x:Name="datapicker_ngaySinh" HorizontalAlignment="Left" Margin="444,127,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.314,0.635"/>
@@ -38,7 +36,7 @@
         <TextBox x:Name="TextBox_hanhLyKg" HorizontalAlignment="Left" Margin="444,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46"/>
         <TextBlock HorizontalAlignment="Left" Margin="338,222,0,0" TextWrapping="Wrap" x:Name="TextBlock_maGhe" Text="MÃ GHẾ" VerticalAlignment="Top" Height="20" Width="100"/>
         <TextBox x:Name="TextBox_maGhe" HorizontalAlignment="Left" Margin="444,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46"/>
-        <DataGrid x:Name="dgvChuyenBay" 
+        <DataGrid x:Name="dgvHanhKhach" 
                   HorizontalAlignment="Left" 
                   Height="114" Margin="309,287,0,0" 
                   VerticalAlignment="Top" 
@@ -58,10 +56,11 @@
                                     Binding="{Binding hanhLy.soKg}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Mã ghế"
                                     Binding="{Binding choNgoi.maGhe}"></DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="Chọn" IsReadOnly="False"/>
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btn_huyHanhKhach" Content="HỦY HÀNH KHÁCH" HorizontalAlignment="Left" Margin="634,107,0,0" VerticalAlignment="Top" FontSize="12" Background="#FFE65B5B"/>
+        <Button x:Name="btn_huyHanhKhach" Content="HỦY HÀNH KHÁCH" HorizontalAlignment="Left" Margin="634,107,0,0" VerticalAlignment="Top" FontSize="12" Background="#FFE65B5B" Click="btn_huyHanhKhach_Click"/>
         <Button x:Name="btn_themHanhKhach" Content="THÊM HÀNH KHÁCH" HorizontalAlignment="Left" Margin="634,60,0,0" VerticalAlignment="Top" FontSize="12" Width="138" Click="btn_themHanhKhach_Click"/>
         <TextBox x:Name="TextBox_hanhLyThanhTien" HorizontalAlignment="Left" Margin="499,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65"/>
         <TextBox x:Name="TextBox_maGheThanhTien" HorizontalAlignment="Left" Margin="499,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65"/>
@@ -72,5 +71,10 @@
             <ComboBoxItem Content="87"/>
             <ComboBoxItem Content="88"/>
         </ComboBox>
+        <ComboBox x:Name="combobox_gioiTinh" HorizontalAlignment="Left" Margin="443,98,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Nam"/>
+            <ComboBoxItem Content="Nữ"/>
+        </ComboBox>
+        <Button x:Name="btn_ThanhToan" Content="THANH TOÁN" HorizontalAlignment="Left" Margin="628,14,0,0" VerticalAlignment="Top" Width="144" Height="34" Click="btn_ThanhToan_Click"/>
     </Grid>
 </Window>

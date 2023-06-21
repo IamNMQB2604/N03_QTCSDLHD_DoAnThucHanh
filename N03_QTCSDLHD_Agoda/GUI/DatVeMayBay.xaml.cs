@@ -22,6 +22,8 @@ namespace GUI
     {
         int _id_NguoiDung; // tao bien cuc bo nhan id NguoiDung 
         ChuyenBay _chuyenBay;
+        List<HanhKhach> dsHanhKhach = new List<HanhKhach>();
+        VeMayBay _VeMayBay = new VeMayBay();
         public DatVeMayBay(int id,List<ChuyenBay> chuyenBay)
         {
             InitializeComponent();
@@ -66,17 +68,60 @@ namespace GUI
 
         }
 
-        private void btn_tiepTuc_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void btn_themHanhKhach_Click(object sender, RoutedEventArgs e)
         {
-            //HanhLy tempHanhLy = new HanhLy(TextBox_hanhLyKg, TextBox_hanhLyThanhTien);
-            //HanhKhach tempHanhKhach = new HanhKhach(TextBox_hoTen.Text, TextBox_gioiTinh.Text, datapicker_ngaySinh, combobox_quocTich.Text, );
-            //List<HanhKhach> dsHanhKhach;
-            //dsHanhKhach.Add()
+            HanhLy tempHanhLy = new HanhLy();
+            tempHanhLy.soKg = int.Parse(TextBox_hanhLyKg.Text);
+            tempHanhLy.giaTien= int.Parse(TextBox_hanhLyThanhTien.Text);
+
+            ChoNgoi tempChoNgoi = new ChoNgoi();
+            tempChoNgoi.maGhe = TextBox_maGhe.Text;
+            tempChoNgoi.giaTien = int.Parse(TextBox_maGheThanhTien.Text);
+
+            HanhKhach tempHanhKhach = new HanhKhach();
+            tempHanhKhach.hoTen = TextBox_hoTen.Text;
+            tempHanhKhach.hanhLy = tempHanhLy;
+            tempHanhKhach.choNgoi = tempChoNgoi;
+            tempHanhKhach.gioiTinh = combobox_gioiTinh.Text;
+            tempHanhKhach.ngaySinh = datapicker_ngaySinh.Text;
+            
+            dsHanhKhach.Add(tempHanhKhach);
+            dgvHanhKhach.ItemsSource = dsHanhKhach;
+            dgvHanhKhach.Items.Refresh();
+            
+        }
+
+        private void btn_huyHanhKhach_Click(object sender, RoutedEventArgs e)
+        {
+
+            for (int i = 0; i < dgvHanhKhach.Items.Count; i++)
+            {
+                CheckBox mycheckbox = dgvHanhKhach.Columns[4].GetCellContent(dgvHanhKhach.Items[i]) as CheckBox;
+                if (mycheckbox.IsChecked == true)
+                {
+                    dsHanhKhach.RemoveAt(i);
+                }
+            };
+            
+            dgvHanhKhach.ItemsSource = dsHanhKhach;
+            dgvHanhKhach.Items.Refresh();
+            MessageBox.Show(dsHanhKhach.Count.ToString());
+        }
+
+        private void btn_ThanhToan_Click(object sender, RoutedEventArgs e)
+        {
+            _VeMayBay.id_nguoiDung = _id_NguoiDung;
+            _VeMayBay.maQuocGia = combobox_maQuocGia.Text;
+            _VeMayBay.SDT = TextBox_sdt.Text;
+            _VeMayBay.email = TextBox_email.Text;
+            _VeMayBay.chuyenBay = _chuyenBay;
+            _VeMayBay.hanhKhach = dsHanhKhach;
+
+            ThanhToan thanhToan_UI = new ThanhToan(_id_NguoiDung, _VeMayBay);
+            thanhToan_UI.Show();
+            this.Close();
         }
     }
 }
