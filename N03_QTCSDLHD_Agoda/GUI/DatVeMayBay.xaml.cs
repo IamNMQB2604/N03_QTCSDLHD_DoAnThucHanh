@@ -25,13 +25,8 @@ namespace GUI
         public DatVeMayBay(int id,List<ChuyenBay> chuyenBay)
         {
             InitializeComponent();
-            List<string> thongTinChuyenBay = new List<string>();
             _id_NguoiDung = id; //gan gia tri cua id NguoiDung vao bien cuc bo
-            for (int i = 0; i < chuyenBay.Count; i++)
-            {
-                thongTinChuyenBay.Add(ThongTinChuyenBay(chuyenBay[i]));
-            }
-            tbChiTietChuyenBay.Text = "Chuyến Bay Đi" + '\n' + thongTinChuyenBay[0] + "Chuyến Bay Về" + '\n' + thongTinChuyenBay[1];
+            HienThiThongTinChuyenBay(chuyenBay)
 ;        }
 
         private string ThongTinChuyenBay(ChuyenBay chuyenBay)
@@ -46,6 +41,22 @@ namespace GUI
                 + "Thời gian bay: " + chuyenBay.thoiGianBay + "\n"
                 + "Hạng vé: " + chuyenBay.hangVe + "\n";
             return thongTinChuyenBay;
+        }
+        private void HienThiThongTinChuyenBay(List<ChuyenBay> chuyenBay) 
+        {
+            List<string> thongTinChuyenBay = new List<string>();
+            for (int i = 0; i < chuyenBay.Count; i++)
+            {
+                thongTinChuyenBay.Add(ThongTinChuyenBay(chuyenBay[i]));
+            }
+            if (thongTinChuyenBay.Count < 2)
+            {
+                tbChiTietChuyenBay.Text = "Chuyến Bay Đi" + '\n' + thongTinChuyenBay[0];
+            }
+            else
+            {
+                tbChiTietChuyenBay.Text = "Chuyến Bay Đi" + '\n' + thongTinChuyenBay[0] + "Chuyến Bay Về" + '\n' + thongTinChuyenBay[1];
+            }
         }
         private void btn_QuayLai_Click(object sender, RoutedEventArgs e)
         {
