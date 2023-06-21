@@ -59,10 +59,10 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <DatePicker x:Name="dataPicker_ngayKetThuc" HorizontalAlignment="Left" Margin="259,138,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,2.718" />
-        <DatePicker x:Name="dataPicker_ngayBatDau" HorizontalAlignment="Left" Margin="258,187,0,0" Width="101" VerticalAlignment="Top" />
+        <DatePicker x:Name="dataPicker_ngayDi" HorizontalAlignment="Left" Margin="259,138,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,2.718" />
+        <DatePicker x:Name="dataPicker_ngayVe" HorizontalAlignment="Left" Margin="258,187,0,0" Width="101" VerticalAlignment="Top" />
         <TextBlock HorizontalAlignment="Left" Margin="149,140,0,0" TextWrapping="Wrap" Text="Ngày Đi" VerticalAlignment="Top" Height="23" Width="86" FontSize="14" RenderTransformOrigin="0.586,-0.242"/>
-        <TextBlock Margin="149,189,565,0" TextWrapping="Wrap" Text="Ngày Về" VerticalAlignment="Top" Height="23" FontSize="14"/>
+        <TextBlock x:Name="txtNgayVe"  Margin="149,189,565,0" TextWrapping="Wrap" Text="Ngày Về" VerticalAlignment="Top" Height="23" FontSize="14"/>
         <TextBlock Margin="149,238,578,0" TextWrapping="Wrap" Text="Hạng Ghế" VerticalAlignment="Top" Height="21" FontSize="14"/>
         <TextBlock Margin="148,289,527,0" TextWrapping="Wrap" Text="Điểm Xuất Phát" VerticalAlignment="Top" Height="23" FontSize="14"/>
         <TextBlock Margin="149,332,551,0" TextWrapping="Wrap" Text="Điểm Đến" VerticalAlignment="Top" Height="28" FontSize="14"/>

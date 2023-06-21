@@ -128,9 +128,20 @@ namespace GUI
                     danhSachChuyenBayTemp.Add(danhSachChuyenBay[i]);
                 }
             }
-            XemChiTietChuyenBay xemChiTietChuyenBay_UI = new XemChiTietChuyenBay(_id, danhSachChuyenBayTemp);
-            xemChiTietChuyenBay_UI.Show();
-            this.Close();
+            if (danhSachChuyenBayTemp.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn chuyến bay", "Thông Báo", MessageBoxButton.OK);
+            }
+            else if (danhSachChuyenBayTemp.Count > 1)
+            {
+                MessageBox.Show("Chỉ được chọn một chuyến bay để xem chi tiết", "Thông Báo", MessageBoxButton.OK);
+            }
+            else
+            {
+                XemChiTietChuyenBay xemChiTietChuyenBay_UI = new XemChiTietChuyenBay(_id, danhSachChuyenBayTemp);
+                xemChiTietChuyenBay_UI.Show();
+                this.Close();
+            }
         }
         private void btnThemXeDayHang_Click(object sender, RoutedEventArgs e)
         {
@@ -162,20 +173,57 @@ namespace GUI
                     danhSachChuyenBayTemp.Add(danhSachChuyenBay[i]);
                 }
             }
-            ChuyenBay ? ChuyenBay_Selected = dgvChuyenBay.SelectedItem as ChuyenBay;
-            DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id,danhSachChuyenBayTemp);
-            datVeMayBay_UI.Show();
-            this.Close();
+            if (rbMotChieu.IsChecked == true)
+            {
+                if (danhSachChuyenBayTemp.Count == 0)
+                {
+                    MessageBox.Show("Bạn chưa chọn chuyến bay", "Thông Báo", MessageBoxButton.OK);
+                }
+                else if (danhSachChuyenBayTemp.Count > 1)
+                {
+                    MessageBox.Show("Bạn đang chọn chuyến bay một chiều không thể chọn hơn 1 chuyến bay", "Thông Báo", MessageBoxButton.OK);
+
+                }
+                else
+                {
+                    DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id, danhSachChuyenBayTemp);
+                    datVeMayBay_UI.Show();
+                    this.Close();
+                }
+            }
+            else
+            {
+                if (danhSachChuyenBayTemp.Count == 0)
+                {
+                    MessageBox.Show("Bạn chưa chọn chuyến bay", "Thông Báo", MessageBoxButton.OK);
+                }
+                else if (danhSachChuyenBayTemp.Count == 1)
+                {
+                    MessageBox.Show("Bạn đang chọn chuyến bay Khứ Hồi phải chọn đủ cả chuyến bay đi và chuyến bay về", "Thông Báo", MessageBoxButton.OK);
+                }
+                else if (danhSachChuyenBayTemp.Count > 2)
+                {
+                    MessageBox.Show("Bạn đang chọn chuyến bay Khứ Hồi Chỉ được chọn 2 chuyến bay", "Thông Báo", MessageBoxButton.OK);
+
+                }
+                else
+                {
+                    DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id, danhSachChuyenBayTemp);
+                    datVeMayBay_UI.Show();
+                    this.Close();
+                }
+            }
         }
 
         private void rb_MotChieuChecked(object sender, RoutedEventArgs e)
         {
-
+            dataPicker_ngayVe.IsEnabled = false;
+            txtNgayVe.IsEnabled = false;
         }
 
         private void rbKhuHoi_Checked(object sender, RoutedEventArgs e)
         {
-
+            dataPicker_ngayVe.IsEnabled = true;
         }
         private void frBody_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
