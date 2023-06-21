@@ -14,5 +14,9 @@ namespace BUS
         {
             return chuyenBayDAO.LayDanhSachChuyenBay_DB();
         }
+        public List<ChuyenBay> TimKiemChuyenBay(string ngayDi,string hangVe,string diemXuatPhat,string diemDen)
+        {
+            return chuyenBayDAO.TimKiemChuyenBay_DB(ngayDi, hangVe, diemXuatPhat, diemDen);
+        }
     }
 }

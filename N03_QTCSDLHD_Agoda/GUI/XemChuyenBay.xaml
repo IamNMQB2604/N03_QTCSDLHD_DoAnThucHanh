@@ -70,10 +70,10 @@
         <TextBlock Margin="149,238,578,0" TextWrapping="Wrap" Text="Hạng Ghế" VerticalAlignment="Top" Height="21" FontSize="14"/>
         <TextBlock Margin="148,289,527,0" TextWrapping="Wrap" Text="Điểm Xuất Phát" VerticalAlignment="Top" Height="23" FontSize="14"/>
         <TextBlock Margin="149,332,551,0" TextWrapping="Wrap" Text="Điểm Đến" VerticalAlignment="Top" Height="28" FontSize="14"/>
-        <ComboBox x:Name="comboBox_HangGhe" HorizontalAlignment="Left" Margin="259,234,0,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.372,0.12">
-            <ComboBoxItem Content="Phổ thông"/>
-            <ComboBoxItem Content="Phổ thông cao cấp"/>
-            <ComboBoxItem Content="Thương gia"/>
+        <ComboBox x:Name="cb_HangGhe" HorizontalAlignment="Left" Margin="259,234,0,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.372,0.12" SelectionChanged="comboBox_HangGhe_SelectionChanged">
+            <ComboBoxItem Content="Phổ Thông"/>
+            <ComboBoxItem Content="Phổ Thông Cao Cấp"/>
+            <ComboBoxItem Content="Thương Gia"/>
             <ComboBoxItem Content="Hạng Nhất"/>
             <ComboBoxItem Content=""/>
         </ComboBox>

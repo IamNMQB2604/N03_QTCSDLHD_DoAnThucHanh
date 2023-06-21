@@ -86,7 +86,7 @@ namespace GUI
             "Vĩnh Long",
             "Vĩnh Phúc",
             "Yên Bái",
-            "Hồ Chí Minh"
+            "TP.Hồ Chí Minh"
         };
         int _id;
         ChuyenBay_BUS chuyenBayBussiness = new ChuyenBay_BUS();
@@ -125,9 +125,11 @@ namespace GUI
                 CheckBox mycheckbox = dgvChuyenBay.Columns[0].GetCellContent(dgvChuyenBay.Items[i]) as CheckBox;
                 if (mycheckbox.IsChecked == true)
                 {
-                    danhSachChuyenBayTemp.Add(danhSachChuyenBay[i]);
+                    ChuyenBay chuyenBay = dgvChuyenBay.Items[i] as ChuyenBay;
+                    danhSachChuyenBayTemp.Add(chuyenBay);
                 }
             }
+           
             if (danhSachChuyenBayTemp.Count == 0)
             {
                 MessageBox.Show("Bạn chưa chọn chuyến bay", "Thông Báo", MessageBoxButton.OK);
@@ -154,7 +156,8 @@ namespace GUI
                 CheckBox mycheckbox = dgvChuyenBay.Columns[0].GetCellContent(dgvChuyenBay.Items[i]) as CheckBox;
                 if (mycheckbox.IsChecked == true)
                 {
-                    danhSachChuyenBayTemp.Add(danhSachChuyenBay[i]);
+                    ChuyenBay chuyenBay = dgvChuyenBay.Items[i] as ChuyenBay;
+                    danhSachChuyenBayTemp.Add(chuyenBay);
                 }
             }
         }
@@ -170,7 +173,8 @@ namespace GUI
                 CheckBox mycheckbox = dgvChuyenBay.Columns[0].GetCellContent(dgvChuyenBay.Items[i]) as CheckBox;
                 if (mycheckbox.IsChecked == true)
                 {
-                    danhSachChuyenBayTemp.Add(danhSachChuyenBay[i]);
+                    ChuyenBay chuyenBay = dgvChuyenBay.Items[i] as ChuyenBay;
+                    danhSachChuyenBayTemp.Add(chuyenBay);
                 }
             }
             if (rbMotChieu.IsChecked == true)
@@ -191,7 +195,7 @@ namespace GUI
                     this.Close();
                 }
             }
-            else
+            else if(rbKhuHoi.IsChecked==true)
             {
                 if (danhSachChuyenBayTemp.Count == 0)
                 {
@@ -213,6 +217,10 @@ namespace GUI
                     this.Close();
                 }
             }
+            else
+            {
+                MessageBox.Show("Bạn phải chọn thông tin Một Chiều Hoặc Khứ Hồi", "Thông Báo", MessageBoxButton.OK);
+            }    
         }
 
         private void rb_MotChieuChecked(object sender, RoutedEventArgs e)
@@ -237,7 +245,44 @@ namespace GUI
 
         private void btnTimKiem_Click(object sender, RoutedEventArgs e)
         {
-
+            List<ChuyenBay> dsChuyenBay = new List<ChuyenBay>();
+            if (rbMotChieu.IsChecked == true)
+            {
+                if (dataPicker_ngayDi.SelectedDate == null||cb_HangGhe.SelectedItem==null||cb_diemXuatPhat.SelectedItem==null||cb_diemDen.SelectedItem==null)
+                {
+                    MessageBox.Show("Bạn phải nhập đủ thông tin Ngày Đi, Hạng Vé, Điểm Xuất Phát, Điểm Đến", "Thông Báo", MessageBoxButton.OK);
+                }
+                else
+                {
+                    DateTime selectedDate = (DateTime)dataPicker_ngayDi.SelectedDate;
+                    string ngayDi = selectedDate.ToString("dd-MM-yyyy");
+                    dsChuyenBay = chuyenBayBussiness.TimKiemChuyenBay(ngayDi,cb_HangGhe.Text,cb_diemXuatPhat.Text,cb_diemDen.Text);
+                    if (dsChuyenBay == null)
+                    {
+                        MessageBox.Show("Không có chuyến bay nào đúng với yêu cầu");
+                    }
+                    else
+                    {
+                        dgvChuyenBay.ItemsSource = dsChuyenBay;
+                        dgvChuyenBay.Items.Refresh();
+                    }
+                }
+            }
+            else if(rbKhuHoi.IsChecked==true)
+            {
+                if (dataPicker_ngayDi.SelectedDate == null || cb_HangGhe.SelectedItem == null || cb_diemXuatPhat.SelectedItem == null || cb_diemDen.SelectedItem == null || dataPicker_ngayVe.SelectedDate==null)
+                {
+                    MessageBox.Show("Bạn phải nhập đủ thông tin Ngày Đi, Ngày Về, Hạng Vé, Điểm Xuất Phát, Điểm Đến", "Thông Báo", MessageBoxButton.OK);
+                }
+                else
+                {
+                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn phải chọn thông tin Một Chiều Hoặc Khứ Hồi", "Thông Báo", MessageBoxButton.OK);
+            }    
         }
 
         private void btn_TraCuuVe_Click(object sender, RoutedEventArgs e)
@@ -259,6 +304,11 @@ namespace GUI
         }
 
         private void dgvChuyenBay_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void comboBox_HangGhe_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

@@ -31,5 +31,29 @@ namespace DAO
                 return danhSachChuyenBay;
             }
         }
+        public List<ChuyenBay> TimKiemChuyenBay_DB(string ngayDi, string hangVe, string diemXuatPhat, string diemDen)
+        {
+
+            var client = new MongoClient("mongodb://127.0.0.1:27017");
+            var db = client.GetDatabase("QuanLyVeMayBay");
+            var collection = db.GetCollection<ChuyenBay>("ChuyenBay");
+
+            var filter = Builders<ChuyenBay>.Filter.And(
+                Builders<ChuyenBay>.Filter.Eq("thoiDiemDi.NgayDi", ngayDi),
+                Builders<ChuyenBay>.Filter.Eq("hangVe", hangVe),
+                Builders<ChuyenBay>.Filter.Eq("diemXuatPhat", diemXuatPhat),
+                Builders<ChuyenBay>.Filter.Eq("diemDen", diemDen)
+            );
+
+            List<ChuyenBay> danhSachChuyenBay = collection.Find(filter).ToList();
+            if (danhSachChuyenBay.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return danhSachChuyenBay;
+            }
+        }
     }
 }
