@@ -15,6 +15,13 @@ namespace DAO
 {
     public class DatVeMayBay_DAO
     {
-        
+        public void ThemCacVeMayBay_DB(VeMayBay veMayBay)
+        {
+            var mongoClient = new MongoClient("mongodb://localhost:27017");
+            var database = mongoClient.GetDatabase("QuanLyVeMayBay"); // Thay "ten_database" bằng tên database thực tế
+            var collection = database.GetCollection<VeMayBay>("VeMayBay"); // Thay "ten_bosuutap" bằng tên collection thực tế
+            collection.InsertOne(veMayBay);
+
+        }
     }
 }

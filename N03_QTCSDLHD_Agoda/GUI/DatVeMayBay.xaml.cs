@@ -21,26 +21,28 @@ namespace GUI
     public partial class DatVeMayBay : Window
     {
         int _id_NguoiDung; // tao bien cuc bo nhan id NguoiDung 
-        ChuyenBay _chuyenBay;
+        List<ChuyenBay> dschuyenBay = new List<ChuyenBay>();
         List<HanhKhach> dsHanhKhach = new List<HanhKhach>();
         VeMayBay _VeMayBay = new VeMayBay();
-        public DatVeMayBay(int id,List<ChuyenBay> chuyenBay)
+        public DatVeMayBay(int id, List<ChuyenBay> chuyenBay)
         {
             InitializeComponent();
             _id_NguoiDung = id; //gan gia tri cua id NguoiDung vao bien cuc bo
-            HienThiThongTinChuyenBay(chuyenBay)
+            HienThiThongTinChuyenBay(chuyenBay);
+            dschuyenBay = chuyenBay;
+        
 ;        }
 
         private string ThongTinChuyenBay(ChuyenBay chuyenBay)
         {
-            string thongTinChuyenBay = "Hãng hàng không: " + chuyenBay.hangHangKhong + '\n'
-                + "Thời điểm đi: " + chuyenBay.thoiDiemDi.ngayDi +" "+chuyenBay.thoiDiemDi.gioDi + '\n'
-                + "Thời điểm đến: "  +chuyenBay.thoiDiemDen.ngayDen + " " + chuyenBay.thoiDiemDen.gioDen + '\n'
-                + "Gía vé mỗi hành khách: " + chuyenBay.giaVe + '\n'
-                + "Điểm xuất phát: " + chuyenBay.diemXuatPhat + '\n'
-                + "Điểm dừng: " + chuyenBay.diemDung + '\n'
-                + "Điểm đến: " + chuyenBay.diemDen + '\n'
-                + "Thời gian bay: " + chuyenBay.thoiGianBay + "\n"
+            string thongTinChuyenBay = "Hãng: " + chuyenBay.hangHangKhong + '\n'
+                + "Đi lúc: " + chuyenBay.thoiDiemDi.ngayDi +" "+chuyenBay.thoiDiemDi.gioDi + '\n'
+                + "Đến lúc: "  +chuyenBay.thoiDiemDen.ngayDen + " " + chuyenBay.thoiDiemDen.gioDen + '\n'
+                + "Giá vé: " + chuyenBay.giaVe + '\n'
+                + "Xuất phát: " + chuyenBay.diemXuatPhat + '\n'
+                + "Dừng: " + chuyenBay.diemDung + '\n'
+                + "Đến: " + chuyenBay.diemDen + '\n'
+                + "Giờ bay: " + chuyenBay.thoiGianBay + "\n"
                 + "Hạng vé: " + chuyenBay.hangVe + "\n";
             return thongTinChuyenBay;
         }
@@ -73,24 +75,27 @@ namespace GUI
         private void btn_themHanhKhach_Click(object sender, RoutedEventArgs e)
         {
             HanhLy tempHanhLy = new HanhLy();
-            tempHanhLy.soKg = int.Parse(TextBox_hanhLyKg.Text);
-            tempHanhLy.giaTien= int.Parse(TextBox_hanhLyThanhTien.Text);
+            tempHanhLy.soKg = int.Parse(combobox_soKg.Text);
+            tempHanhLy.giaTien = int.Parse(TextBox_hanhLyThanhTien.Text) * tempHanhLy.soKg;
 
             ChoNgoi tempChoNgoi = new ChoNgoi();
-            tempChoNgoi.maGhe = TextBox_maGhe.Text;
+            tempChoNgoi.maGhe = combobox_maGhe.Text;
             tempChoNgoi.giaTien = int.Parse(TextBox_maGheThanhTien.Text);
 
             HanhKhach tempHanhKhach = new HanhKhach();
             tempHanhKhach.hoTen = TextBox_hoTen.Text;
+            tempHanhKhach.quocTich = combobox_maQuocGia.Text;
             tempHanhKhach.hanhLy = tempHanhLy;
             tempHanhKhach.choNgoi = tempChoNgoi;
             tempHanhKhach.gioiTinh = combobox_gioiTinh.Text;
             tempHanhKhach.ngaySinh = datapicker_ngaySinh.Text;
-            
+
+            //MessageBox.Show(tempHanhLy.soKg.ToString());
+
             dsHanhKhach.Add(tempHanhKhach);
             dgvHanhKhach.ItemsSource = dsHanhKhach;
             dgvHanhKhach.Items.Refresh();
-            
+
         }
 
         private void btn_huyHanhKhach_Click(object sender, RoutedEventArgs e)
@@ -116,8 +121,10 @@ namespace GUI
             _VeMayBay.maQuocGia = combobox_maQuocGia.Text;
             _VeMayBay.SDT = TextBox_sdt.Text;
             _VeMayBay.email = TextBox_email.Text;
-            _VeMayBay.chuyenBay = _chuyenBay;
+            _VeMayBay.chuyenBay = dschuyenBay;
             _VeMayBay.hanhKhach = dsHanhKhach;
+
+            //MessageBox.Show(_VeMayBay.chuyenBay[0].hangHangKhong);
 
             ThanhToan thanhToan_UI = new ThanhToan(_id_NguoiDung, _VeMayBay);
             thanhToan_UI.Show();

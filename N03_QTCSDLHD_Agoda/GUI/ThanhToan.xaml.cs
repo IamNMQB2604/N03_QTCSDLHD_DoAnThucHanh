@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DTO;
 using DAO;
+using BUS;
 
 namespace GUI
 {
@@ -23,10 +24,18 @@ namespace GUI
     {
         TheTinDung _theTinDung = new TheTinDung();
         VeMayBay _veMayBay = new VeMayBay();
-        public ThanhToan(int id_NguoiDung, VeMayBay veMayBay )
+        int _idNguoiDung;
+        List<ChuyenBay> danhSachChuyenBayTemp = new List<ChuyenBay>();
+        VeMayBay_BUS _VeMayBay_BUS = new VeMayBay_BUS();
+
+
+
+        public ThanhToan(int id_NguoiDung, VeMayBay veMayBay)
         {
             InitializeComponent();
             _veMayBay = veMayBay;
+            _idNguoiDung = id_NguoiDung;
+            //danhSachChuyenBayTemp = chuyenBay;
         }
 
         private void btn_thanhToan_Click(object sender, RoutedEventArgs e)
@@ -37,7 +46,19 @@ namespace GUI
             _veMayBay.theTinDung = _theTinDung;
             _veMayBay.ngayDatVe = DateTime.Today.ToString();
 
-            MessageBox.Show("THANH TOÁN THÀNH CÔNG");
+
+            _VeMayBay_BUS.themCacVeMayBay(_veMayBay);
+            MessageBox.Show(_veMayBay.chuyenBay[0].hangHangKhong);
+
+            
+            
+        }
+
+        private void btn_QuayLai_Click(object sender, RoutedEventArgs e)
+        {
+            DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_idNguoiDung, danhSachChuyenBayTemp);
+            datVeMayBay_UI.Show();
+            this.Close();
         }
     }
 }

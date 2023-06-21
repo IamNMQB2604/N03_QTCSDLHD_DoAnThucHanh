@@ -15,6 +15,7 @@
         <TextBox x:Name="textbox_SoThe" HorizontalAlignment="Left" Margin="280,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="datepicker_ngayHetHan" HorizontalAlignment="Left" Margin="280,273,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btn_thanhToan" Content="THANH TOÁN" HorizontalAlignment="Left" Margin="576,167,0,0" VerticalAlignment="Top" Height="30" Width="123" Click="btn_thanhToan_Click"/>
+        <Button x:Name="btn_QuayLai" Content="QUAY LẠI" HorizontalAlignment="Left" Margin="40,43,0,0" VerticalAlignment="Top" Click="btn_QuayLai_Click"/>
 
     </Grid>
 </Window>

@@ -10,8 +10,8 @@ namespace DTO
     public class ThoiDiemDi
     {
         [BsonElement("NgayDi")]
-        public string ngayDi { get; set; }
+        public string? ngayDi { get; set; }
         [BsonElement("GioDi")]
-        public string gioDi { get; set; }
+        public string? gioDi { get; set; }
     }
 }

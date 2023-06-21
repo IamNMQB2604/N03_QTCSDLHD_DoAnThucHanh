@@ -26,7 +26,7 @@ namespace DTO
         public string? email { get; set; }
 
         [BsonElement("chuyenBay")]
-        public ChuyenBay? chuyenBay { get; set; }
+        public List<ChuyenBay>? chuyenBay { get; set; }
 
         [BsonElement("hanhKhach")]
         public List<HanhKhach>? hanhKhach { get; set; }
