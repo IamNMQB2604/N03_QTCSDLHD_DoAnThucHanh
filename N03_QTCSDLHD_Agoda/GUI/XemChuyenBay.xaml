@@ -24,17 +24,18 @@
 
         <Label Content="TÌM KIẾM CHUYẾN BAY" HorizontalAlignment="Left" Margin="329,25,0,0" VerticalAlignment="Top" Height="38" Width="300" FontFamily="Bold" FontSize="24" FontWeight="Bold" Foreground="Red"/>
         <DataGrid x:Name="dgvChuyenBay" 
-                  HorizontalAlignment="Left" 
+ 
+                  HorizontalAlignment="Stretch"
                   Height="268" Margin="400,0,0,0" 
                   VerticalAlignment="Center" 
                   Width="400" 
                   FontSize="16"
                   CanUserAddRows="False"
-                  SelectionMode="Single"
                   SelectionUnit="FullRow"
                   IsReadOnly="True"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="Chọn" IsReadOnly="False"/>
                 <DataGridTextColumn Header="Hãng Hàng Không"
                                     Binding="{Binding hangHangKhong}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Thời Điểm Đi"
@@ -53,16 +54,19 @@
                                     Binding="{Binding diemDung}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Hạng Vé"
                                     Binding="{Binding hangVe}"></DataGridTextColumn>
+             
+
             </DataGrid.Columns>
         </DataGrid>
 
-        <DatePicker x:Name="dataPicker_ngayKetThuc" HorizontalAlignment="Left" Margin="260,140,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,2.718" />
-        <DatePicker x:Name="dataPicker_ngayBatDau" HorizontalAlignment="Left" Margin="260,0,0,0" Width="101" />
-        <TextBlock HorizontalAlignment="Left" Margin="149,150,0,0" TextWrapping="Wrap" Text="Ngày Đi" VerticalAlignment="Top" Height="23" Width="86" FontSize="14" RenderTransformOrigin="0.586,-0.242"/>
-        <TextBlock Margin="149,207,565,0" TextWrapping="Wrap" Text="Ngày Về" VerticalAlignment="Top" Height="23" FontSize="14"/>
-        <TextBlock Margin="149,259,578,0" TextWrapping="Wrap" Text="Hạng Ghế" VerticalAlignment="Top" Height="21" FontSize="14"/>
-        <TextBlock HorizontalAlignment="Left" Margin="152,308,0,0" TextWrapping="Wrap" Text="Số Khách" VerticalAlignment="Top" Height="18" Width="80" FontSize="14"/>
-        <ComboBox x:Name="comboBox_HangGhe" HorizontalAlignment="Left" Margin="259,253,0,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.372,0.12">
+        <DatePicker x:Name="dataPicker_ngayKetThuc" HorizontalAlignment="Left" Margin="259,138,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,2.718" />
+        <DatePicker x:Name="dataPicker_ngayBatDau" HorizontalAlignment="Left" Margin="258,187,0,0" Width="101" VerticalAlignment="Top" />
+        <TextBlock HorizontalAlignment="Left" Margin="149,140,0,0" TextWrapping="Wrap" Text="Ngày Đi" VerticalAlignment="Top" Height="23" Width="86" FontSize="14" RenderTransformOrigin="0.586,-0.242"/>
+        <TextBlock Margin="149,189,565,0" TextWrapping="Wrap" Text="Ngày Về" VerticalAlignment="Top" Height="23" FontSize="14"/>
+        <TextBlock Margin="149,238,578,0" TextWrapping="Wrap" Text="Hạng Ghế" VerticalAlignment="Top" Height="21" FontSize="14"/>
+        <TextBlock Margin="148,289,527,0" TextWrapping="Wrap" Text="Điểm Xuất Phát" VerticalAlignment="Top" Height="23" FontSize="14"/>
+        <TextBlock Margin="149,332,551,0" TextWrapping="Wrap" Text="Điểm Đến" VerticalAlignment="Top" Height="28" FontSize="14"/>
+        <ComboBox x:Name="comboBox_HangGhe" HorizontalAlignment="Left" Margin="259,234,0,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.372,0.12">
             <ComboBoxItem Content="Phổ thông"/>
             <ComboBoxItem Content="Phổ thông cao cấp"/>
             <ComboBoxItem Content="Thương gia"/>
@@ -70,12 +74,17 @@
             <ComboBoxItem Content=""/>
         </ComboBox>
 
+        <ComboBox x:Name="cb_diemXuatPhat" HorizontalAlignment="Left" Margin="278,279,0,0" VerticalAlignment="Top" Width="86" RenderTransformOrigin="0.372,0.12" SelectionChanged="comboBox_diemXuatPhat_SelectionChanged">
+        </ComboBox>
+
+        <ComboBox x:Name="cb_diemDen" HorizontalAlignment="Left" Margin="259,320,0,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.372,0.12" >
+        </ComboBox>
+
         <RadioButton Name="rbMotChieu" Content="Một Chiều" Margin="149,93,550,0" VerticalAlignment="Top" FontSize="14" Checked="rb_MotChieuChecked" />
-        <RadioButton Name="rbKhuHoi" Content="Khứ Hồi" HorizontalAlignment="Left" Margin="274,93,0,0" VerticalAlignment="Top" FontSize="14" Checked="rbKhuHoi_Checked"/>
-        <Button x:Name="btnChonChuyenBay" Content="Chọn Chuyến Bay" HorizontalAlignment="Left" Margin="420,363,0,0" VerticalAlignment="Top" Width="147" Height="37" FontWeight="Bold"  RenderTransformOrigin="0.683,0.422" Click="btnChonChuyenBay_Click"/>
-        <Button x:Name="btnThemXeDayHang" Content="Thêm Vào Xe Đẩy Hàng" HorizontalAlignment="Left" Margin="590,363,0,0" VerticalAlignment="Top" Width="192" Height="37" FontWeight="Bold"  Click="btnThemXeDayHang_Click"/>
-        <Button x:Name="btnXemChiTiet" Content="Xem Chi Tiết" HorizontalAlignment="Left" Margin="278,363,0,0" VerticalAlignment="Top" Width="122" Height="37" FontWeight="Bold"  Click="btn_ChiTiet_Click"/>
-        <Button x:Name="btnTimKiem" Content="Tìm Kiếm" HorizontalAlignment="Left" Margin="149,362,0,0" VerticalAlignment="Top" Width="100" Height="38" FontWeight="Bold"  Click="btnTimKiem_Click"/>
-        <TextBox x:Name="tbSoKhach" HorizontalAlignment="Left" Margin="260,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Height="37" TextChanged="tbSoKhach_TextChanged"/>
+        <RadioButton Name="rbKhuHoi" Content="Khứ Hồi" HorizontalAlignment="Left" Margin="278,93,0,0" VerticalAlignment="Top" FontSize="14" Checked="rbKhuHoi_Checked"/>
+        <Button x:Name="btnChonChuyenBay" Content="Chọn Chuyến Bay" HorizontalAlignment="Left" Margin="423,375,0,0" VerticalAlignment="Top" Width="147" Height="37" FontWeight="Bold"  RenderTransformOrigin="0.683,0.422" Click="btnChonChuyenBay_Click"/>
+        <Button x:Name="btnThemXeDayHang" Content="Thêm Vào Xe Đẩy Hàng" HorizontalAlignment="Left" Margin="598,375,0,0" VerticalAlignment="Top" Width="192" Height="37" FontWeight="Bold"  Click="btnThemXeDayHang_Click"/>
+        <Button x:Name="btnXemChiTiet" Content="Xem Chi Tiết" HorizontalAlignment="Left" Margin="278,375,0,0" VerticalAlignment="Top" Width="122" Height="37" FontWeight="Bold"  Click="btn_ChiTiet_Click"/>
+        <Button x:Name="btnTimKiem" Content="Tìm Kiếm" HorizontalAlignment="Left" Margin="150,375,0,0" VerticalAlignment="Top" Width="100" Height="38" FontWeight="Bold"  Click="btnTimKiem_Click"/>
     </Grid>
 </Window>

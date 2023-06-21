@@ -20,6 +20,72 @@ namespace GUI
     /// </summary>
     public partial class XemChuyenBay : Window
     {
+        List<string> danhSachTinhThanh = new List<string>
+        {
+            "An Giang",
+            "Bà Rịa - Vũng Tàu",
+            "Bạc Liêu",
+            "Bắc Kạn",
+            "Bắc Giang",
+            "Bắc Ninh",
+            "Bến Tre",
+            "Bình Dương",
+            "Bình Định",
+            "Bình Phước",
+            "Bình Thuận",
+            "Cà Mau",
+            "Cao Bằng",
+            "Cần Thơ",
+            "Đà Nẵng",
+            "Đắk Lắk",
+            "Đắk Nông",
+            "Điện Biên",
+            "Đồng Nai",
+            "Đồng Tháp",
+            "Gia Lai",
+            "Hà Giang",
+            "Hà Nam",
+            "Hà Nội",
+            "Hà Tĩnh",
+            "Hải Dương",
+            "Hải Phòng",
+            "Hậu Giang",
+            "Hòa Bình",
+            "Hưng Yên",
+            "Khánh Hòa",
+            "Kiên Giang",
+            "Kon Tum",
+            "Lai Châu",
+            "Lâm Đồng",
+            "Lạng Sơn",
+            "Lào Cai",
+            "Long An",
+            "Nam Định",
+            "Nghệ An",
+            "Ninh Bình",
+            "Ninh Thuận",
+            "Phú Thọ",
+            "Phú Yên",
+            "Quảng Bình",
+            "Quảng Nam",
+            "Quảng Ngãi",
+            "Quảng Ninh",
+            "Quảng Trị",
+            "Sóc Trăng",
+            "Sơn La",
+            "Tây Ninh",
+            "Thái Bình",
+            "Thái Nguyên",
+            "Thanh Hóa",
+            "Thừa Thiên Huế",
+            "Tiền Giang",
+            "Trà Vinh",
+            "Tuyên Quang",
+            "Vĩnh Long",
+            "Vĩnh Phúc",
+            "Yên Bái",
+            "Hồ Chí Minh"
+        };
         int _id;
         ChuyenBay_BUS chuyenBayBussiness = new ChuyenBay_BUS();
         public XemChuyenBay(int id)
@@ -27,6 +93,9 @@ namespace GUI
             InitializeComponent();
             HienThiDanhSachChuyenBay();
             _id=id;
+            cb_diemXuatPhat.ItemsSource = danhSachTinhThanh;
+            cb_diemDen.ItemsSource = danhSachTinhThanh;
+
         }
         private void HienThiDanhSachChuyenBay()
         {
@@ -99,6 +168,16 @@ namespace GUI
             XemGioHang xemGioHang_UI = new XemGioHang();
             xemGioHang_UI.Show();
             this.Close();
+        }
+
+        private void comboBox_diemXuatPhat_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void dgvChuyenBay_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
