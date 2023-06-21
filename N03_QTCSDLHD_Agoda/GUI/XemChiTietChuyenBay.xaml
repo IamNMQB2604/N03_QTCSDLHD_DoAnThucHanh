@@ -25,10 +25,14 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Hãng Hàng Không"
                                     Binding="{Binding hangHangKhong}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Thời Điểm Đi"
-                                    Binding="{Binding thoiDiemDi,StringFormat='dd/MM/yyyy HH:mm:ss'}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Thời Điểm Đến"
-                                    Binding="{Binding thoiDiemDen, StringFormat='dd/MM/yyyy HH:mm:ss'}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ngày Bay"
+                                    Binding="{Binding thoiDiemDi.ngayDi}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Giờ Bay"
+                                    Binding="{Binding thoiDiemDi.gioDi}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ngày Đến"
+                                    Binding="{Binding thoiDiemDen.ngayDen}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Giờ Đến"
+                                    Binding="{Binding thoiDiemDen.gioDen}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Thời Gian Bay"
                                     Binding="{Binding thoiGianBay}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Giá Vé"

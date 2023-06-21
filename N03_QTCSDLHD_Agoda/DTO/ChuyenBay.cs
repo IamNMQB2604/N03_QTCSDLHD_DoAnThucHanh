@@ -14,9 +14,9 @@ namespace DTO
         [BsonElement ("hangHangKhong")]
         public string? hangHangKhong { get; set; }
         [BsonElement("thoiDiemDi")]
-        public DateTime thoiDiemDi { get; set; }
+        public ThoiDiemDi thoiDiemDi { get; set; }
         [BsonElement("thoiDiemDen")]
-        public DateTime thoiDiemDen { get; set; }
+        public ThoiDiemDen thoiDiemDen { get; set; }
         [BsonElement("thoiGianBay")]
         public string ?thoiGianBay { get; set; }
         [BsonElement("giaVe")]

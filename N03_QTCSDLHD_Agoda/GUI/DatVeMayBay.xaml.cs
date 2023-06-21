@@ -34,8 +34,8 @@ namespace GUI
         private string ThongTinChuyenBay(ChuyenBay chuyenBay)
         {
             string thongTinChuyenBay = "Hãng hàng không: " + chuyenBay.hangHangKhong + '\n'
-                + "Thời điểm đi: " + chuyenBay.thoiDiemDi.ToString("dd/MM/yy HH:mm:ss") + '\n'
-                + "Thời điểm đến: " + chuyenBay.thoiDiemDen.ToString("dd/MM/yy HH:mm:ss") + '\n'
+                + "Thời điểm đi: " + chuyenBay.thoiDiemDi.ngayDi +" "+chuyenBay.thoiDiemDi.gioDi + '\n'
+                + "Thời điểm đến: "  +chuyenBay.thoiDiemDen.ngayDen + " " + chuyenBay.thoiDiemDen.gioDen + '\n'
                 + "Gía vé mỗi hành khách: " + chuyenBay.giaVe + '\n'
                 + "Điểm xuất phát: " + chuyenBay.diemXuatPhat + '\n'
                 + "Điểm dừng: " + chuyenBay.diemDung + '\n'
