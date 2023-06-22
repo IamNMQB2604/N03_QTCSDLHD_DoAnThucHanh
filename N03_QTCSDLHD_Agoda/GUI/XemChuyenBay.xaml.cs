@@ -176,7 +176,7 @@ namespace GUI
                     hangVe = "Business";
                 }
                 string ttCB = danhSachChuyenBayTemp[i].thoiDiemDi.ngayDi.ToString() + " "
-                                + danhSachChuyenBayTemp[i].thoiDiemDi.gioDi.ToString()+ " "
+                                + danhSachChuyenBayTemp[i].thoiDiemDi.gioDi.ToString() + " "
                                + danhSachChuyenBayTemp[i].thoiDiemDen.ngayDen.ToString() + " "
                                 + danhSachChuyenBayTemp[i].thoiDiemDen.gioDen.ToString() + " "
                                 + danhSachChuyenBayTemp[i].thoiGianBay.ToString() + " "
@@ -187,13 +187,13 @@ namespace GUI
                 string idCB = danhSachChuyenBayTemp[i]._id.ToString();
 
                 if (chuyenBayBussiness.ThemChuyenBayVaoGioHang(idKH, idCB, ttCB))
-                { 
-                    MessageBox.Show("Thêm Vào Giỏ Hàng Thành Công"); 
+                {
+                    MessageBox.Show("Thêm Vào Giỏ Hàng Thành Công");
                 }
                 else
                 {
                     MessageBox.Show("Thêm Vào Giỏ Hàng Thất Bại");
-                }    
+                }
             }
         }
 
@@ -247,9 +247,23 @@ namespace GUI
                 }
                 else
                 {
-                    DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id, danhSachChuyenBayTemp);
-                    datVeMayBay_UI.Show();
-                    this.Close();
+                    if (danhSachChuyenBayTemp[0].diemXuatPhat == danhSachChuyenBayTemp[1].diemXuatPhat)
+                    {
+                        MessageBox.Show("Bạn chưa chọn chuyến bay về", "Thông Báo", MessageBoxButton.OK);
+                    }
+                    else
+                    {
+                        if (danhSachChuyenBayTemp[0].hangHangKhong != danhSachChuyenBayTemp[1].hangHangKhong)
+                        {
+                            MessageBox.Show("Chuyến bay Khứ Hồi không cho phép chọn 2 chuyến bay không cùng hãng.   Nhập từ khóa tìm kiếm hãng hàng không và chọn lại", "Thông Báo", MessageBoxButton.OK);
+                        }
+                        else
+                        {
+                            DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id, danhSachChuyenBayTemp);
+                            datVeMayBay_UI.Show();
+                            this.Close();
+                        }
+                    }
                 }
             }
             else
@@ -309,7 +323,7 @@ namespace GUI
                 List<ChuyenBay> dsChuyenBayVe = new List<ChuyenBay>();
                 if (dataPicker_ngayDi.SelectedDate == null || cb_HangGhe.SelectedItem == null || cb_diemXuatPhat.SelectedItem == null || cb_diemDen.SelectedItem == null || dataPicker_ngayVe.SelectedDate == null)
                 {
-                    MessageBox.Show("Bạn phải nhập đủ thông tin Ngày Đi, Ngày Về, Hạng Vé, Điểm Xuất Phát, Điểm Đến", "Thông Báo", MessageBoxButton.OK);
+                    MessageBox.Show("Bạn phải nhập đủ thông tin Ngày Đi, Ngày Về, Hạng Vé, Điểm Xuất Phát, Điểm Đến", "Thông Báo", MessageBoxButton.OK); 
                 }
                 else
                 {
@@ -384,6 +398,15 @@ namespace GUI
             Login login_UI = new Login();
             login_UI.Show();
             this.Close();
+        }
+        private void tbHangHangKhong_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dgvChuyenBay.Items.Filter = FilterMethod;
+        }
+        private bool FilterMethod(object obj)
+        {
+            var ChuyenBay = (ChuyenBay)obj;
+            return ChuyenBay.hangHangKhong.Contains(tbHangHangKhong.Text, StringComparison.OrdinalIgnoreCase);
         }
     }
 }
