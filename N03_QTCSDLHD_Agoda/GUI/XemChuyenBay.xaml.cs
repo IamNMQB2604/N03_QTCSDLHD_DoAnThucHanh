@@ -95,7 +95,7 @@ namespace GUI
         {
             InitializeComponent();
             HienThiDanhSachChuyenBay();
-            _id=id;
+            _id = id;
             cb_diemXuatPhat.ItemsSource = danhSachTinhThanh;
             cb_diemDen.ItemsSource = danhSachTinhThanh;
 
@@ -113,7 +113,6 @@ namespace GUI
                 dgvChuyenBay.ItemsSource = dsChuyenBay;
                 dgvChuyenBay.Items.Refresh();
             }
-            danhSachChuyenBay = dsChuyenBay;
         }
         private void btn_ChiTiet_Click(object sender, RoutedEventArgs e)
         {
@@ -129,14 +128,10 @@ namespace GUI
                     danhSachChuyenBayTemp.Add(chuyenBay);
                 }
             }
-           
+
             if (danhSachChuyenBayTemp.Count == 0)
             {
                 MessageBox.Show("Bạn chưa chọn chuyến bay", "Thông Báo", MessageBoxButton.OK);
-            }
-            else if (danhSachChuyenBayTemp.Count > 1)
-            {
-                MessageBox.Show("Chỉ được chọn một chuyến bay để xem chi tiết", "Thông Báo", MessageBoxButton.OK);
             }
             else
             {
@@ -159,6 +154,39 @@ namespace GUI
                     ChuyenBay chuyenBay = dgvChuyenBay.Items[i] as ChuyenBay;
                     danhSachChuyenBayTemp.Add(chuyenBay);
                 }
+            }
+            string idKH = _id.ToString();
+            string hangVe = "";
+            for (int i = 0; i < danhSachChuyenBayTemp.Count; i++)
+            {
+                if (danhSachChuyenBayTemp[i].hangVe.ToString() == "Hạng Nhất")
+                {
+                    hangVe = "First";
+                }
+                if (danhSachChuyenBayTemp[i].hangVe.ToString() == "Phổ Thông Cao Cấp")
+                {
+                    hangVe = "Premium Economy";
+                }
+                if (danhSachChuyenBayTemp[i].hangVe.ToString() == "Phổ Thông")
+                {
+                    hangVe = "Economy";
+                }
+                else
+                {
+                    hangVe = "Business";
+                }
+                string ttCB = danhSachChuyenBayTemp[i].thoiDiemDi.ngayDi.ToString() + " "
+                                + danhSachChuyenBayTemp[i].thoiDiemDi.gioDi.ToString()+ " "
+                               + danhSachChuyenBayTemp[i].thoiDiemDen.ngayDen.ToString() + " "
+                                + danhSachChuyenBayTemp[i].thoiDiemDen.gioDen.ToString() + " "
+                                + danhSachChuyenBayTemp[i].thoiGianBay.ToString() + " "
+                                + danhSachChuyenBayTemp[i].hangHangKhong.ToString() + " "
+                                + hangVe + " "
+                                + danhSachChuyenBayTemp[i].giaVe.ToString();
+
+                string idCB = danhSachChuyenBayTemp[i]._id.ToString();
+                chuyenBayBussiness.ThemChuyenBayVaoGioHang(idKH, idCB, ttCB);
+                MessageBox.Show("Thêm Thành Công");
             }
         }
 
@@ -195,7 +223,7 @@ namespace GUI
                     this.Close();
                 }
             }
-            else if(rbKhuHoi.IsChecked==true)
+            else if (rbKhuHoi.IsChecked == true)
             {
                 if (danhSachChuyenBayTemp.Count == 0)
                 {
@@ -220,7 +248,7 @@ namespace GUI
             else
             {
                 MessageBox.Show("Bạn phải chọn thông tin Một Chiều Hoặc Khứ Hồi", "Thông Báo", MessageBoxButton.OK);
-            }    
+            }
         }
 
         private void rb_MotChieuChecked(object sender, RoutedEventArgs e)
@@ -248,7 +276,7 @@ namespace GUI
             List<ChuyenBay> dsChuyenBay = new List<ChuyenBay>();
             if (rbMotChieu.IsChecked == true)
             {
-                if (dataPicker_ngayDi.SelectedDate == null||cb_HangGhe.SelectedItem==null||cb_diemXuatPhat.SelectedItem==null||cb_diemDen.SelectedItem==null)
+                if (dataPicker_ngayDi.SelectedDate == null || cb_HangGhe.SelectedItem == null || cb_diemXuatPhat.SelectedItem == null || cb_diemDen.SelectedItem == null)
                 {
                     MessageBox.Show("Bạn phải nhập đủ thông tin Ngày Đi, Hạng Vé, Điểm Xuất Phát, Điểm Đến", "Thông Báo", MessageBoxButton.OK);
                 }
@@ -256,7 +284,7 @@ namespace GUI
                 {
                     DateTime selectedDate = (DateTime)dataPicker_ngayDi.SelectedDate;
                     string ngayDi = selectedDate.ToString("dd-MM-yyyy");
-                    dsChuyenBay = chuyenBayBussiness.TimKiemChuyenBay(ngayDi,cb_HangGhe.Text,cb_diemXuatPhat.Text,cb_diemDen.Text);
+                    dsChuyenBay = chuyenBayBussiness.TimKiemChuyenBay(ngayDi, cb_HangGhe.Text, cb_diemXuatPhat.Text, cb_diemDen.Text);
                     if (dsChuyenBay == null)
                     {
                         MessageBox.Show("Không có chuyến bay nào đúng với yêu cầu");
@@ -265,24 +293,55 @@ namespace GUI
                     {
                         dgvChuyenBay.ItemsSource = dsChuyenBay;
                         dgvChuyenBay.Items.Refresh();
+                        danhSachChuyenBay = dsChuyenBay;
                     }
                 }
             }
-            else if(rbKhuHoi.IsChecked==true)
+            else if (rbKhuHoi.IsChecked == true)
             {
-                if (dataPicker_ngayDi.SelectedDate == null || cb_HangGhe.SelectedItem == null || cb_diemXuatPhat.SelectedItem == null || cb_diemDen.SelectedItem == null || dataPicker_ngayVe.SelectedDate==null)
+                List<ChuyenBay> dsChuyenBayVe = new List<ChuyenBay>();
+                if (dataPicker_ngayDi.SelectedDate == null || cb_HangGhe.SelectedItem == null || cb_diemXuatPhat.SelectedItem == null || cb_diemDen.SelectedItem == null || dataPicker_ngayVe.SelectedDate == null)
                 {
                     MessageBox.Show("Bạn phải nhập đủ thông tin Ngày Đi, Ngày Về, Hạng Vé, Điểm Xuất Phát, Điểm Đến", "Thông Báo", MessageBoxButton.OK);
                 }
                 else
                 {
-                    
+                    if (dataPicker_ngayDi.SelectedDate > dataPicker_ngayVe.SelectedDate)
+                    {
+                        MessageBox.Show("Ngày Về phải lớn hơn Ngày Đi", "Thông Báo", MessageBoxButton.OK);
+                    }
+                    else
+                    {
+                        DateTime selectedNgayDi = (DateTime)dataPicker_ngayDi.SelectedDate;
+                        DateTime selectedNgayVe = (DateTime)dataPicker_ngayVe.SelectedDate;
+                        string ngayDi = selectedNgayDi.ToString("dd-MM-yyyy");
+                        string ngayVe = selectedNgayVe.ToString("dd-MM-yyyy");
+                        dsChuyenBay = chuyenBayBussiness.TimKiemChuyenBay(ngayDi, cb_HangGhe.Text, cb_diemXuatPhat.Text, cb_diemDen.Text);
+                        if (dsChuyenBay == null)
+                        {
+                            MessageBox.Show("Không có chuyến bay nào đúng với yêu cầu");
+                        }
+                        else
+                        {
+                            dsChuyenBayVe = chuyenBayBussiness.TimKiemChuyenBay(ngayVe, cb_HangGhe.Text, cb_diemDen.Text, cb_diemXuatPhat.Text);
+                            if (dsChuyenBayVe == null)
+                            {
+                                MessageBox.Show("Không có chuyến bay nào đúng với yêu cầu");
+                            }
+                            else
+                            {
+                                dsChuyenBay.AddRange(dsChuyenBayVe);
+                                dgvChuyenBay.ItemsSource = dsChuyenBay;
+                                dgvChuyenBay.Items.Refresh();
+                            }
+                        }
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Bạn phải chọn thông tin Một Chiều Hoặc Khứ Hồi", "Thông Báo", MessageBoxButton.OK);
-            }    
+            }
         }
 
         private void btn_TraCuuVe_Click(object sender, RoutedEventArgs e)

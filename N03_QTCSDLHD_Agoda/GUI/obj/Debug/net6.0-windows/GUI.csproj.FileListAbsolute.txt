@@ -172,3 +172,6 @@ C:\Users\ASUS\source\repos\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\obj\
 C:\Users\ASUS\source\repos\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\obj\Debug\net6.0-windows\ThanhToan.baml
 D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\obj\Debug\net6.0-windows\ThanhToan.g.cs
 D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\obj\Debug\net6.0-windows\ThanhToan.baml
+D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\bin\Debug\net6.0-windows\Pipelines.Sockets.Unofficial.dll
+D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\bin\Debug\net6.0-windows\StackExchange.Redis.dll
+D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\bin\Debug\net6.0-windows\System.IO.Pipelines.dll

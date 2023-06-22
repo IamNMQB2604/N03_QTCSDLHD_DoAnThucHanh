@@ -22,7 +22,7 @@
             </StackPanel>
         </DockPanel>
 
-        <Label Content="TÌM KIẾM CHUYẾN BAY" HorizontalAlignment="Left" Margin="329,25,0,0" VerticalAlignment="Top" Height="38" Width="300" FontFamily="Bold" FontSize="24" FontWeight="Bold" Foreground="Red"/>
+        <Label Content="TÌM KIẾM CHUYẾN BAY" HorizontalAlignment="Left" Margin="300,26,0,0" VerticalAlignment="Top" Height="38" Width="300" FontFamily="Bold" FontSize="24" FontWeight="Bold" Foreground="Red"/>
         <DataGrid x:Name="dgvChuyenBay" 
  
                   HorizontalAlignment="Stretch"
@@ -58,7 +58,7 @@
                                     Binding="{Binding diemDung}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Hạng Vé"
                                     Binding="{Binding hangVe}"></DataGridTextColumn>
-             
+
 
             </DataGrid.Columns>
         </DataGrid>

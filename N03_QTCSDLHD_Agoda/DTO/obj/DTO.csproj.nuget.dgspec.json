@@ -48,6 +48,10 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.19.2, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.6.116, )"
             }
           },
           "imports": [
