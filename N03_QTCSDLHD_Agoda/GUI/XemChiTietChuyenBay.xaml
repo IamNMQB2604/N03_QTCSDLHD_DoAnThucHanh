@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="XemChiTietChuyenBay" Height="450" Width="800">
+        Title="XemChiTietChuyenBay" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Label Content="THÔNG TIN CHUYẾN BAY" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Height="33" Width="264" FontFamily="Bold" FontSize="15" FontWeight="Bold" Foreground="Red"/>
         <Label Content="THÔNG TIN CHI TIẾT" HorizontalAlignment="Left" Margin="25,217,0,0" VerticalAlignment="Top" Height="33" Width="264" FontFamily="Bold" FontSize="15" FontWeight="Bold" Foreground="Red"/>
@@ -21,7 +21,8 @@
                   SelectionMode="Single"
                   SelectionUnit="FullRow"
                   IsReadOnly="True"
-                  AutoGenerateColumns="False" SelectionChanged="dgvThongTinChuyenBay_SelectionChanged">
+                  AutoGenerateColumns="False" SelectionChanged="dgvThongTinChuyenBay_SelectionChanged" 
+                  Background="{DynamicResource MaterialDesignBackground}" RowBackground="#FFE8EDE0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Hãng Hàng Không"
                                     Binding="{Binding hangHangKhong}"></DataGridTextColumn>

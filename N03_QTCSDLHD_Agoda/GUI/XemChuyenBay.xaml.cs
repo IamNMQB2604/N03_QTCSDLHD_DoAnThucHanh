@@ -214,54 +214,68 @@ namespace GUI
             }
             if (rbMotChieu.IsChecked == true)
             {
-                if (danhSachChuyenBayTemp.Count == 0)
+                if (dataPicker_ngayDi.SelectedDate == null || cb_HangGhe.SelectedItem == null || cb_diemXuatPhat.SelectedItem == null || cb_diemDen.SelectedItem == null)
                 {
-                    MessageBox.Show("Bạn chưa chọn chuyến bay", "Thông Báo", MessageBoxButton.OK);
-                }
-                else if (danhSachChuyenBayTemp.Count > 1)
-                {
-                    MessageBox.Show("Bạn đang chọn chuyến bay một chiều không thể chọn hơn 1 chuyến bay", "Thông Báo", MessageBoxButton.OK);
-
+                    MessageBox.Show("Bạn phải nhập đủ thông tin Ngày Đi, Hạng Vé, Điểm Xuất Phát, Điểm Đến . Nhấn nút Tìm Kiếm để lọc thông tin", "Thông Báo", MessageBoxButton.OK);
                 }
                 else
                 {
-                    DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id, danhSachChuyenBayTemp);
-                    datVeMayBay_UI.Show();
-                    this.Close();
+                    if (danhSachChuyenBayTemp.Count == 0)
+                    {
+                        MessageBox.Show("Bạn chưa chọn chuyến bay", "Thông Báo", MessageBoxButton.OK);
+                    }
+                    else if (danhSachChuyenBayTemp.Count > 1)
+                    {
+                        MessageBox.Show("Bạn đang chọn chuyến bay một chiều không thể chọn hơn 1 chuyến bay", "Thông Báo", MessageBoxButton.OK);
+
+                    }
+                    else
+                    {
+                        DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id, danhSachChuyenBayTemp);
+                        datVeMayBay_UI.Show();
+                        this.Close();
+                    }
                 }
             }
             else if (rbKhuHoi.IsChecked == true)
             {
-                if (danhSachChuyenBayTemp.Count == 0)
+                if (dataPicker_ngayDi.SelectedDate == null || cb_HangGhe.SelectedItem == null || cb_diemXuatPhat.SelectedItem == null || cb_diemDen.SelectedItem == null || dataPicker_ngayVe.SelectedDate == null)
                 {
-                    MessageBox.Show("Bạn chưa chọn chuyến bay", "Thông Báo", MessageBoxButton.OK);
-                }
-                else if (danhSachChuyenBayTemp.Count == 1)
-                {
-                    MessageBox.Show("Bạn đang chọn chuyến bay Khứ Hồi phải chọn đủ cả chuyến bay đi và chuyến bay về", "Thông Báo", MessageBoxButton.OK);
-                }
-                else if (danhSachChuyenBayTemp.Count > 2)
-                {
-                    MessageBox.Show("Bạn đang chọn chuyến bay Khứ Hồi Chỉ được chọn 2 chuyến bay", "Thông Báo", MessageBoxButton.OK);
-
+                    MessageBox.Show("Bạn phải nhập đủ thông tin Ngày Đi, Ngày Về, Hạng Vé, Điểm Xuất Phát, Điểm Đến. Nhấn nút Tìm Kiếm để lọc thông tin", "Thông Báo", MessageBoxButton.OK);
                 }
                 else
                 {
-                    if (danhSachChuyenBayTemp[0].diemXuatPhat == danhSachChuyenBayTemp[1].diemXuatPhat)
+                    if (danhSachChuyenBayTemp.Count == 0)
                     {
-                        MessageBox.Show("Bạn chưa chọn chuyến bay về", "Thông Báo", MessageBoxButton.OK);
+                        MessageBox.Show("Bạn chưa chọn chuyến bay", "Thông Báo", MessageBoxButton.OK);
+                    }
+                    else if (danhSachChuyenBayTemp.Count == 1)
+                    {
+                        MessageBox.Show("Bạn đang chọn chuyến bay Khứ Hồi phải chọn đủ cả chuyến bay đi và chuyến bay về", "Thông Báo", MessageBoxButton.OK);
+                    }
+                    else if (danhSachChuyenBayTemp.Count > 2)
+                    {
+                        MessageBox.Show("Bạn đang chọn chuyến bay Khứ Hồi Chỉ được chọn 2 chuyến bay", "Thông Báo", MessageBoxButton.OK);
+
                     }
                     else
                     {
-                        if (danhSachChuyenBayTemp[0].hangHangKhong != danhSachChuyenBayTemp[1].hangHangKhong)
+                        if (danhSachChuyenBayTemp[0].diemXuatPhat == danhSachChuyenBayTemp[1].diemXuatPhat)
                         {
-                            MessageBox.Show("Chuyến bay Khứ Hồi không cho phép chọn 2 chuyến bay không cùng hãng.   Nhập từ khóa tìm kiếm hãng hàng không và chọn lại", "Thông Báo", MessageBoxButton.OK);
+                            MessageBox.Show("Bạn chưa chọn chuyến bay về", "Thông Báo", MessageBoxButton.OK);
                         }
                         else
                         {
-                            DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id, danhSachChuyenBayTemp);
-                            datVeMayBay_UI.Show();
-                            this.Close();
+                            if (danhSachChuyenBayTemp[0].hangHangKhong != danhSachChuyenBayTemp[1].hangHangKhong)
+                            {
+                                MessageBox.Show("Chuyến bay Khứ Hồi không cho phép chọn 2 chuyến bay không cùng hãng.   Nhập từ khóa tìm kiếm hãng hàng không và chọn lại", "Thông Báo", MessageBoxButton.OK);
+                            }
+                            else
+                            {
+                                DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id, danhSachChuyenBayTemp);
+                                datVeMayBay_UI.Show();
+                                this.Close();
+                            }
                         }
                     }
                 }
