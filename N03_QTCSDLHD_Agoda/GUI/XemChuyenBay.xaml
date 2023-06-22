@@ -18,7 +18,7 @@
                 </ToggleButton>
                 <Button x:Name="btn_TraCuVe" Content="Tra Cứu Vé" DockPanel.Dock="Top" Width="NaN" Height="50" Background="White" Foreground="Black" FontSize="12" HorizontalContentAlignment="Left" Click="btn_TraCuuVe_Click"/>
                 <Button x:Name="btn_XemGioHang" Content="Xem Giỏ Hàng" Width="NaN" DockPanel.Dock="Top" Height="50" Background="White" Foreground="Black" FontSize="12" HorizontalContentAlignment="Left" Click="btn_XemGioHang_Click"/>
-                <Button Content="Đăng Xuất" Width="NaN" Height="50" Background="White" Foreground="Black" FontSize="12" HorizontalContentAlignment="Left"/>
+                <Button Content="Đăng Xuất" Width="NaN" Height="50" Background="White" Foreground="Black" FontSize="12" HorizontalContentAlignment="Left" Click="btnDangXuat_Click"/>
             </StackPanel>
         </DockPanel>
 

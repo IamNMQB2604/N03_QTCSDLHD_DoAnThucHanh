@@ -18,9 +18,9 @@ namespace BUS
         {
             return chuyenBayDAO.TimKiemChuyenBay_DB(ngayDi, hangVe, diemXuatPhat, diemDen);
         }
-        public void ThemChuyenBayVaoGioHang(string idKhachHang, string idChuyenBay, string thongTinChuyenBay)
+        public bool ThemChuyenBayVaoGioHang(string idKhachHang, string idChuyenBay, string thongTinChuyenBay)
         {
-            chuyenBayDAO.ThemChuyenBayVaoGioHang_DB(idKhachHang, idChuyenBay, thongTinChuyenBay);
+           return chuyenBayDAO.ThemChuyenBayVaoGioHang_DB(idKhachHang, idChuyenBay, thongTinChuyenBay);
         }    
     }
 }

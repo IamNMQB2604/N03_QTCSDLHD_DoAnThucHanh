@@ -185,8 +185,15 @@ namespace GUI
                                 + danhSachChuyenBayTemp[i].giaVe.ToString();
 
                 string idCB = danhSachChuyenBayTemp[i]._id.ToString();
-                chuyenBayBussiness.ThemChuyenBayVaoGioHang(idKH, idCB, ttCB);
-                MessageBox.Show("Thêm Thành Công");
+
+                if (chuyenBayBussiness.ThemChuyenBayVaoGioHang(idKH, idCB, ttCB))
+                { 
+                    MessageBox.Show("Thêm Vào Giỏ Hàng Thành Công"); 
+                }
+                else
+                {
+                    MessageBox.Show("Thêm Vào Giỏ Hàng Thất Bại");
+                }    
             }
         }
 
@@ -370,6 +377,13 @@ namespace GUI
         private void comboBox_HangGhe_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void btnDangXuat_Click(object sender, RoutedEventArgs e)
+        {
+            Login login_UI = new Login();
+            login_UI.Show();
+            this.Close();
         }
     }
 }

@@ -55,12 +55,13 @@ namespace DAO
                 return danhSachChuyenBay;
             }
         }
-        public void ThemChuyenBayVaoGioHang_DB(string idKhachHang,string idChuyenBay,string thongTinChuyenBay)
+        public bool ThemChuyenBayVaoGioHang_DB(string idKhachHang,string idChuyenBay,string thongTinChuyenBay)
         {
             var redisConnectionString = "localhost:6379"; // Thay thế bằng thông tin máy chủ Redis của bạn
             var redis = ConnectionMultiplexer.Connect(redisConnectionString);
             var db = redis.GetDatabase();
-            db.HashSet(idKhachHang, idChuyenBay, thongTinChuyenBay);
+            bool added = db.HashSet(idKhachHang, idChuyenBay, thongTinChuyenBay);
+            return added;
         }
     }
 }
