@@ -86,10 +86,9 @@
 
         <RadioButton Name="rbMotChieu" Content="Một Chiều" Margin="146,45,798,0" VerticalAlignment="Top" FontSize="14" Checked="rb_MotChieuChecked" RenderTransformOrigin="0.488,0.212" />
         <RadioButton Name="rbKhuHoi" Content="Khứ Hồi" HorizontalAlignment="Left" Margin="286,45,0,0" VerticalAlignment="Top" FontSize="14" Checked="rbKhuHoi_Checked"/>
-        <Button x:Name="btnChonChuyenBay" Content="Chọn Chuyến Bay" HorizontalAlignment="Left" Margin="549,415,0,0" VerticalAlignment="Top" Width="148" Height="37" FontWeight="Bold"  RenderTransformOrigin="0.683,0.422" Click="btnChonChuyenBay_Click"/>
-        <Button x:Name="btnThemXeDayHang" Content="Thêm Vào Xe Đẩy Hàng" HorizontalAlignment="Left" Margin="794,415,0,0" VerticalAlignment="Top" Width="192" Height="37" FontWeight="Bold"  Click="btnThemXeDayHang_Click"/>
-        <Button x:Name="btnXemChiTiet" Content="Xem Chi Tiết" HorizontalAlignment="Left" Margin="327,415,0,0" VerticalAlignment="Top" Width="122" Height="37" FontWeight="Bold"  Click="btn_ChiTiet_Click"/>
-        <Button x:Name="btnTimKiem" Content="Tìm Kiếm" HorizontalAlignment="Left" Margin="149,415,0,0" VerticalAlignment="Top" Width="100" Height="38" FontWeight="Bold"  Click="btnTimKiem_Click"/>
+        <Button x:Name="btnChonChuyenBay" Content="CHỌN CHUYẾN BAY" HorizontalAlignment="Left" Margin="470,414,0,0" VerticalAlignment="Top" Width="172" Height="37" FontWeight="Bold"  RenderTransformOrigin="0.683,0.422" Click="btnChonChuyenBay_Click"/>
+        <Button x:Name="btnThemXeDayHang" Content="THÊM VÀO XE ĐẨY HÀNG" HorizontalAlignment="Left" Margin="725,414,0,0" VerticalAlignment="Top" Width="209" Height="37" FontWeight="Bold"  Click="btnThemXeDayHang_Click"/>
+        <Button x:Name="btnTimKiem" Content="TÌM KIẾM" HorizontalAlignment="Left" Margin="286,413,0,0" VerticalAlignment="Top" Width="100" Height="38" FontWeight="Bold"  Click="btnTimKiem_Click"/>
         <TextBox x:Name="tbHangHangKhong"  HorizontalAlignment="Left" Height="22" Margin="278,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" TextChanged="tbHangHangKhong_TextChanged"/>
     </Grid>
 </Window>

@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DTO;
 using DAO;
+using System.Security.Cryptography;
+
 namespace GUI
 {
     /// <summary>
@@ -128,6 +130,13 @@ namespace GUI
 
             ThanhToan thanhToan_UI = new ThanhToan(_id_NguoiDung, _VeMayBay);
             thanhToan_UI.Show();
+            this.Close();
+        }
+
+        private void btn_QuayLaiGioHang_Click(object sender, RoutedEventArgs e)
+        {
+            XemGioHang xemGioHang_UI = new XemGioHang(_id_NguoiDung);
+            xemGioHang_UI.Show();
             this.Close();
         }
     }

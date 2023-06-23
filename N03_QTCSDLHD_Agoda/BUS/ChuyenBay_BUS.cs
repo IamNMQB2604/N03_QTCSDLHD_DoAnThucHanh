@@ -21,6 +21,10 @@ namespace BUS
         public bool ThemChuyenBayVaoGioHang(string idKhachHang, string idChuyenBay, string thongTinChuyenBay)
         {
            return chuyenBayDAO.ThemChuyenBayVaoGioHang_DB(idKhachHang, idChuyenBay, thongTinChuyenBay);
-        }    
+        } 
+        public ChuyenBay LayThongTinChuyenBay(int id)
+        {
+            return chuyenBayDAO.LayThongTinChuyenBay_DB(id);
+        }
     }
 }

@@ -114,37 +114,12 @@ namespace GUI
                 dgvChuyenBay.Items.Refresh();
             }
         }
-        private void btn_ChiTiet_Click(object sender, RoutedEventArgs e)
-        {
-            //Mảng ChuyenBay temp để lưu danh sách chuyến bay người dùng chọn 
-            List<ChuyenBay> danhSachChuyenBayTemp = new List<ChuyenBay>();
-            int j = 0;
-            for (int i = 0; i < dgvChuyenBay.Items.Count; i++)
-            {
-                CheckBox mycheckbox = dgvChuyenBay.Columns[0].GetCellContent(dgvChuyenBay.Items[i]) as CheckBox;
-                if (mycheckbox.IsChecked == true)
-                {
-                    ChuyenBay chuyenBay = dgvChuyenBay.Items[i] as ChuyenBay;
-                    danhSachChuyenBayTemp.Add(chuyenBay);
-                }
-            }
-
-            if (danhSachChuyenBayTemp.Count == 0)
-            {
-                MessageBox.Show("Bạn chưa chọn chuyến bay", "Thông Báo", MessageBoxButton.OK);
-            }
-            else
-            {
-                XemChiTietChuyenBay xemChiTietChuyenBay_UI = new XemChiTietChuyenBay(_id, danhSachChuyenBayTemp);
-                xemChiTietChuyenBay_UI.Show();
-                this.Close();
-            }
-        }
         private void btnThemXeDayHang_Click(object sender, RoutedEventArgs e)
         {
             //Màng ChuyenBay temp để lưu danh sách chuyến bay người dùng chọn
             // Truy xuất thêm vào giỏ hàng từ mảng danhsachChuyenBayTemp
             List<ChuyenBay> danhSachChuyenBayTemp = new List<ChuyenBay>();
+            MessageBox.Show("Giỏ hàng chỉ lưu chuyến bay Một Chiều");
             int j = 0;
             for (int i = 0; i < dgvChuyenBay.Items.Count; i++)
             {
@@ -231,8 +206,8 @@ namespace GUI
                     }
                     else
                     {
-                        DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id, danhSachChuyenBayTemp);
-                        datVeMayBay_UI.Show();
+                        XemChiTietChuyenBay xemChiTiet_UI = new XemChiTietChuyenBay(_id, danhSachChuyenBayTemp);
+                        xemChiTiet_UI.Show();
                         this.Close();
                     }
                 }
@@ -272,8 +247,8 @@ namespace GUI
                             }
                             else
                             {
-                                DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id, danhSachChuyenBayTemp);
-                                datVeMayBay_UI.Show();
+                                XemChiTietChuyenBay xemChiTiet_UI = new XemChiTietChuyenBay(_id, danhSachChuyenBayTemp);
+                                xemChiTiet_UI.Show();
                                 this.Close();
                             }
                         }
@@ -387,7 +362,7 @@ namespace GUI
         }
         private void btn_XemGioHang_Click(object sender, RoutedEventArgs e)
         {
-            XemGioHang xemGioHang_UI = new XemGioHang();
+            XemGioHang xemGioHang_UI = new XemGioHang(_id);
             xemGioHang_UI.Show();
             this.Close();
         }

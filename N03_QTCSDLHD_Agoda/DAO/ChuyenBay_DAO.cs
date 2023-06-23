@@ -11,6 +11,8 @@ using System.Data;
 using System.Security.Policy;
 using System.Collections;
 using StackExchange.Redis;
+using System.Windows.Media.Media3D;
+
 namespace DAO
 {
     public class ChuyenBay_DAO
@@ -31,6 +33,15 @@ namespace DAO
                 return danhSachChuyenBay;
             }
         }
+        public ChuyenBay LayThongTinChuyenBay_DB(int id)
+        {
+            var client = new MongoClient("mongodb://127.0.0.1:27017");
+            var db = client.GetDatabase("QuanLyVeMayBay");
+            var collection = db.GetCollection<ChuyenBay>("ChuyenBay");
+            var filter = Builders<ChuyenBay>.Filter.Eq("_id", id);
+            var flight = collection.Find(filter).FirstOrDefault();
+            return flight;
+        }    
         public List<ChuyenBay> TimKiemChuyenBay_DB(string ngayDi, string hangVe, string diemXuatPhat, string diemDen)
         {
 

@@ -8,5 +8,23 @@
         Title="XemGioHang" Height="450" Width="800">
     <Grid>
         <Label Content="GIỎ HÀNG" HorizontalAlignment="Left" Margin="329,25,0,0" VerticalAlignment="Top" Height="38" Width="300" FontFamily="Bold" FontSize="24" FontWeight="Bold" Foreground="Red"/>
+        <DataGrid x:Name="dgvGioHang"
+                  Height="228" Margin="0,74,10,0" 
+                  VerticalAlignment="Top" 
+                  FontSize="16"
+                  CanUserAddRows="False"
+                  SelectionUnit="FullRow"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False" Background="{DynamicResource MaterialDesignBackground}" RowBackground="#FFE8EDE0" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã Chuyến Bay"
+                                    Binding="{Binding id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Thông Tin Chuyến Bay"
+                                    Binding="{Binding thongTinChuyenBay}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btn_DatVe"  Content="Đặt Vé Máy Bay" HorizontalAlignment="Left" Height="44" Margin="157,334,0,0" VerticalAlignment="Top" Width="132" Click="btn_DatVe_Click"/>
+        <Button x:Name="btn_QuayLai" Content="Quay Lại" HorizontalAlignment="Left" Height="44" Width="132" Margin="460,335,0,0" VerticalAlignment="Top" FontSize="14" Click="btn_QuayLai_Click"/>
+        
     </Grid>
 </Window>

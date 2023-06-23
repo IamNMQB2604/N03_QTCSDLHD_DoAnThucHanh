@@ -72,5 +72,19 @@ namespace GUI
                 }
             }
         }
+
+        private void btn_DatVeMayBay_Click(object sender, RoutedEventArgs e)
+        {
+            List<ChuyenBay> danhSachChuyenBayTemp = new List<ChuyenBay>();
+            int j = 0;
+            for (int i = 0; i < dgvThongTinChuyenBay.Items.Count; i++)
+            {
+               ChuyenBay chuyenBay = dgvThongTinChuyenBay.Items[i] as ChuyenBay;
+               danhSachChuyenBayTemp.Add(chuyenBay);
+            }
+            DatVeMayBay datVeMayBay_UI = new DatVeMayBay(_id, danhSachChuyenBayTemp);
+            datVeMayBay_UI.Show();
+            this.Close();
+        }
     }
 }
