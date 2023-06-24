@@ -94,7 +94,7 @@ namespace GUI
         public XemChuyenBay(int id)
         {
             InitializeComponent();
-            HienThiDanhSachChuyenBay();
+            //HienThiDanhSachChuyenBay();
             _id = id;
             cb_diemXuatPhat.ItemsSource = danhSachTinhThanh;
             cb_diemDen.ItemsSource = danhSachTinhThanh;
@@ -356,7 +356,7 @@ namespace GUI
 
         private void btn_TraCuuVe_Click(object sender, RoutedEventArgs e)
         {
-            XemThongTinVe xemThongTinVe_UI = new XemThongTinVe();
+            XemThongTinVe xemThongTinVe_UI = new XemThongTinVe(_id);
             xemThongTinVe_UI.Show();
             this.Close();
         }

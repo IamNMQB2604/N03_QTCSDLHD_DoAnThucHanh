@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using DTO;
 using DAO;
 using System.Security.Cryptography;
-
+using BUS;
 namespace GUI
 {
     /// <summary>
@@ -26,6 +26,7 @@ namespace GUI
         List<ChuyenBay> dschuyenBay = new List<ChuyenBay>();
         List<HanhKhach> dsHanhKhach = new List<HanhKhach>();
         VeMayBay _VeMayBay = new VeMayBay();
+        VeMayBay_BUS _VeMayBay_BUS = new VeMayBay_BUS();
         public DatVeMayBay(int id, List<ChuyenBay> chuyenBay)
         {
             InitializeComponent();
@@ -71,9 +72,6 @@ namespace GUI
             this.Close();
 
         }
-
-        
-
         private void btn_themHanhKhach_Click(object sender, RoutedEventArgs e)
         {
             HanhLy tempHanhLy = new HanhLy();
@@ -119,6 +117,15 @@ namespace GUI
 
         private void btn_ThanhToan_Click(object sender, RoutedEventArgs e)
         {
+            List<VeMayBay> dsVeMayBay= new List<VeMayBay>();
+            dsVeMayBay = _VeMayBay_BUS.LayTatCaThongTinVe();
+            List<int>idVe=new List<int>();
+            for(int i=0;i<dsVeMayBay.Count;i++)
+            {
+                idVe.Add(dsVeMayBay[i]._id);
+            }
+            int maxNumber=idVe.Max();
+            _VeMayBay._id = maxNumber+1;
             _VeMayBay.id_nguoiDung = _id_NguoiDung;
             _VeMayBay.maQuocGia = combobox_maQuocGia.Text;
             _VeMayBay.SDT = TextBox_sdt.Text;

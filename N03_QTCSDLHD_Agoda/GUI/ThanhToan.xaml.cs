@@ -35,7 +35,7 @@ namespace GUI
             InitializeComponent();
             _veMayBay = veMayBay;
             _idNguoiDung = id_NguoiDung;
-            //danhSachChuyenBayTemp = chuyenBay;
+            danhSachChuyenBayTemp = veMayBay.chuyenBay;
         }
 
         private void btn_thanhToan_Click(object sender, RoutedEventArgs e)

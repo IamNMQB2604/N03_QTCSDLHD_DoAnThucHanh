@@ -15,5 +15,13 @@ namespace BUS
         {
             datVeMayBay.ThemCacVeMayBay_DB(veMayBay);
         }
+        public List<VeMayBay> LayTatCaThongTinVe()
+        {
+            return datVeMayBay.LayTatCaThongTinVe_DB();
+        }
+        public List<VeMayBay>LayThongTinVeMayBay(int id)
+        {
+            return datVeMayBay.LayThongTinVeMayBay_DB(id);
+        }
     }
 }

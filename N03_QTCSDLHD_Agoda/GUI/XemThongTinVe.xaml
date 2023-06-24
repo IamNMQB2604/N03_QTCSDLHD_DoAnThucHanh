@@ -8,5 +8,35 @@
         Title="XemThongTinVe" Height="450" Width="800">
     <Grid>
         <Label Content="VÉ MÁY BAY" HorizontalAlignment="Left" Margin="329,25,0,0" VerticalAlignment="Top" Height="38" Width="160" FontFamily="Bold" FontSize="24" FontWeight="Bold" Foreground="Red"/>
+        <DataGrid x:Name="dgvThongTinVe" 
+                  HorizontalAlignment="Left" 
+                  Height="276" 
+                  VerticalAlignment="Center" 
+                  Width="780" 
+                  FontSize="16"
+                  CanUserAddRows="False"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False"
+                  Background="{DynamicResource MaterialDesignBackground}" RowBackground="#FFE8EDE0"
+                  >
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã Vé Máy Bay"
+                                    Binding="{Binding _id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Mã Quốc Gia"
+                                    Binding="{Binding maQuocGia}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Số Điện Thoại"
+                                    Binding="{Binding SDT}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Email"
+                                    Binding="{Binding email}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ngày Đặt Vé"
+                                    Binding="{Binding ngayDatVe}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="XEM CHI TIẾT" HorizontalAlignment="Left" Margin="198,355,0,0" VerticalAlignment="Top" Height="47" FontWeight="Bold"  Width="175" Click="btn_ChiTietVeMayBay_Click" Background="Green" />
+        <Button Content="QUAY LẠI" HorizontalAlignment="Left" Margin="429,356,0,0" VerticalAlignment="Top" Height="46" FontWeight="Bold" Width="170" Click="btn_QuayLai_Click" Background="Red"/>
     </Grid>
 </Window>
