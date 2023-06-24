@@ -114,6 +114,206 @@ namespace GUI
                 dgvChuyenBay.Items.Refresh();
             }
         }
+        private string ChuyenDoiMaDiaDiem(string diaDiem)
+        {
+            string tenVietTat;
+            switch (diaDiem)
+            {
+                case "An Giang":
+                    tenVietTat = "AG";
+                    break;
+                case "Bà Rịa - Vũng Tàu":
+                    tenVietTat = "VT";
+                    break;
+                case "Bạc Liêu":
+                    tenVietTat = "BL";
+                    break;
+                case "Bắc Kạn":
+                    tenVietTat = "BK";
+                    break;
+                case "Bắc Giang":
+                    tenVietTat = "BG";
+                    break;
+                case "Bắc Ninh":
+                    tenVietTat = "BN";
+                    break;
+                case "Bến Tre":
+                    tenVietTat = "BT";
+                    break;
+                case "Bình Dương":
+                    tenVietTat = "BD";
+                    break;
+                case "Bình Định":
+                    tenVietTat = "BĐ";
+                    break;
+                case "Bình Phước":
+                    tenVietTat = "BP";
+                    break;
+                case "Bình Thuận":
+                    tenVietTat = "BTH";
+                    break;
+                case "Cà Mau":
+                    tenVietTat = "CM";
+                    break;
+                case "Cao Bằng":
+                    tenVietTat = "CB";
+                    break;
+                case "Cần Thơ":
+                    tenVietTat = "CT";
+                    break;
+                case "Đà Nẵng":
+                    tenVietTat = "DN";
+                    break;
+                case "Đắk Lắk":
+                    tenVietTat = "ĐL";
+                    break;
+                case "Đắk Nông":
+                    tenVietTat = "ĐN";
+                    break;
+                case "Điện Biên":
+                    tenVietTat = "ĐB";
+                    break;
+                case "Đồng Nai":
+                    tenVietTat = "ĐN";
+                    break;
+                case "Đồng Tháp":
+                    tenVietTat = "ĐT";
+                    break;
+                case "Gia Lai":
+                    tenVietTat = "GL";
+                    break;
+                case "Hà Giang":
+                    tenVietTat = "HG";
+                    break;
+                case "Hà Nam":
+                    tenVietTat = "HN";
+                    break;
+                case "Hà Nội":
+                    tenVietTat = "HN";
+                    break;
+                case "Hà Tĩnh":
+                    tenVietTat = "HT";
+                    break;
+                case "Hải Dương":
+                    tenVietTat = "HD";
+                    break;
+                case "Hải Phòng":
+                    tenVietTat = "HP";
+                    break;
+                case "Hậu Giang":
+                    tenVietTat = "HG";
+                    break;
+                case "Hòa Bình":
+                    tenVietTat = "HB";
+                    break;
+                case "Hưng Yên":
+                    tenVietTat = "HY";
+                    break;
+                case "Khánh Hòa":
+                    tenVietTat = "KH";
+                    break;
+                case "Kiên Giang":
+                    tenVietTat = "KG";
+                    break;
+                case "Kon Tum":
+                    tenVietTat = "KT";
+                    break;
+                case "Lai Châu":
+                    tenVietTat = "LC";
+                    break;
+                case "Lâm Đồng":
+                    tenVietTat = "LD";
+                    break;
+                case "Lạng Sơn":
+                    tenVietTat = "LS";
+                    break;
+                case "Lào Cai":
+                    tenVietTat = "LC";
+                    break;
+                case "Long An":
+                    tenVietTat = "LA";
+                    break;
+                case "Nam Định":
+                    tenVietTat = "ND";
+                    break;
+                case "Nghệ An":
+                    tenVietTat = "NA";
+                    break;
+                case "Ninh Bình":
+                    tenVietTat = "NB";
+                    break;
+                case "Ninh Thuận":
+                    tenVietTat = "NT";
+                    break;
+                case "Phú Thọ":
+                    tenVietTat = "PT";
+                    break;
+                case "Phú Yên":
+                    tenVietTat = "PY";
+                    break;
+                case "Quảng Bình":
+                    tenVietTat = "QB";
+                    break;
+                case "Quảng Nam":
+                    tenVietTat = "QN";
+                    break;
+                case "Quảng Ngãi":
+                    tenVietTat = "QNG";
+                    break;
+                case "Quảng Ninh":
+                    tenVietTat = "QN";
+                    break;
+                case "Quảng Trị":
+                    tenVietTat = "QT";
+                    break;
+                case "Sóc Trăng":
+                    tenVietTat = "ST";
+                    break;
+                case "Sơn La":
+                    tenVietTat = "SL";
+                    break;
+                case "Tây Ninh":
+                    tenVietTat = "TN";
+                    break;
+                case "Thái Bình":
+                    tenVietTat = "TB";
+                    break;
+                case "Thái Nguyên":
+                    tenVietTat = "TN";
+                    break;
+                case "Thanh Hóa":
+                    tenVietTat = "TH";
+                    break;
+                case "Thừa Thiên Huế":
+                    tenVietTat = "TTH";
+                    break;
+                case "Tiền Giang":
+                    tenVietTat = "TG";
+                    break;
+                case "Trà Vinh":
+                    tenVietTat = "TV";
+                    break;
+                case "Tuyên Quang":
+                    tenVietTat = "TQ";
+                    break;
+                case "Vĩnh Long":
+                    tenVietTat = "VL";
+                    break;
+                case "Vĩnh Phúc":
+                    tenVietTat = "VP";
+                    break;
+                case "Yên Bái":
+                    tenVietTat = "YB";
+                    break;
+                case "TP.Hồ Chí Minh":
+                    tenVietTat = "HCM";
+                    break;
+                default:
+                    tenVietTat = "Unknown";
+                    break;
+            }
+            return tenVietTat;
+        }    
         private void btnThemXeDayHang_Click(object sender, RoutedEventArgs e)
         {
             //Màng ChuyenBay temp để lưu danh sách chuyến bay người dùng chọn
@@ -150,12 +350,14 @@ namespace GUI
                 {
                     hangVe = "Business";
                 }
-                string ttCB = danhSachChuyenBayTemp[i].thoiDiemDi.ngayDi.ToString() + " "
-                                + danhSachChuyenBayTemp[i].thoiDiemDi.gioDi.ToString() + " "
-                               + danhSachChuyenBayTemp[i].thoiDiemDen.ngayDen.ToString() + " "
-                                + danhSachChuyenBayTemp[i].thoiDiemDen.gioDen.ToString() + " "
-                                + danhSachChuyenBayTemp[i].thoiGianBay.ToString() + " "
-                                + danhSachChuyenBayTemp[i].hangHangKhong.ToString() + " "
+                string ttCB = ChuyenDoiMaDiaDiem(danhSachChuyenBayTemp[i].diemXuatPhat.ToString()) + " -> "
+                              + ChuyenDoiMaDiaDiem(danhSachChuyenBayTemp[i].diemDen.ToString()) + "  "
+                                + danhSachChuyenBayTemp[i].thoiDiemDi.ngayDi.ToString() + "  "
+                                + danhSachChuyenBayTemp[i].thoiDiemDi.gioDi.ToString() + "  "
+                               + danhSachChuyenBayTemp[i].thoiDiemDen.ngayDen.ToString() + "  "
+                                + danhSachChuyenBayTemp[i].thoiDiemDen.gioDen.ToString() + "  "
+                                + danhSachChuyenBayTemp[i].thoiGianBay.ToString() + "  "
+                                + danhSachChuyenBayTemp[i].hangHangKhong.ToString() + "  "
                                 + hangVe + " "
                                 + danhSachChuyenBayTemp[i].giaVe.ToString();
 

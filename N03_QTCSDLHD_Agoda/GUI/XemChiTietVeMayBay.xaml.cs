@@ -45,7 +45,7 @@ namespace GUI
             List<string> hanhKhachTemp = new List<string>();
             for (int i = 0; i < dsHanhKhach.Count; i++)
             {
-                hanhKhachTemp.Add("Họ Tên: " + dsHanhKhach[i].hoTen.ToString() + "  " + "Giới Tính: " + dsHanhKhach[i].gioiTinh +"  "+ "Ngày Sinh: " +
+                hanhKhachTemp.Add("Mã Chuyến Bay: " + dsHanhKhach[i].maChuyenBay.ToString() +"  " + "Họ Tên: " + dsHanhKhach[i].hoTen.ToString() + "  " + "Giới Tính: " + dsHanhKhach[i].gioiTinh +"  "+ "Ngày Sinh: " +
                 " " + dsHanhKhach[i].ngaySinh.ToString() + "  " + "Quốc Tịch: " + dsHanhKhach[i].quocTich.ToString() + "  " + "Hành Lý: "
                 + dsHanhKhach[i].hanhLy.soKg.ToString() +" Kg"+ "  " + "Chỗ ngồi: " + dsHanhKhach[i].choNgoi.maGhe.ToString());
             }
@@ -54,7 +54,7 @@ namespace GUI
         }    
         private string ThongTinChuyenBay(ChuyenBay chuyenBay)
         {
-            string thongTinChuyenBay = "Hãng: " + chuyenBay.hangHangKhong + '\n'
+            string thongTinChuyenBay = "Mã Chuyến Bay: " + chuyenBay._id + '\n'+ "Hãng: " + chuyenBay.hangHangKhong + '\n'
                 + "Đi lúc: " + chuyenBay.thoiDiemDi.ngayDi + " " + chuyenBay.thoiDiemDi.gioDi + '\n'
                 + "Đến lúc: " + chuyenBay.thoiDiemDen.ngayDen + " " + chuyenBay.thoiDiemDen.gioDen + '\n'
                 + "Giá vé: " + chuyenBay.giaVe + '\n'

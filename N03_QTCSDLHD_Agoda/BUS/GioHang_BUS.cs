@@ -15,5 +15,9 @@ namespace BUS
         {
             return gioHangDAO.LayTatCaThongTinGioHang_DB(id);
         }
+        public bool XoaGioHang(string idKhachHang,string idChuyenBay)
+        {
+            return gioHangDAO.XoaGioHang_DB(idKhachHang, idChuyenBay);
+        }    
     }
 }

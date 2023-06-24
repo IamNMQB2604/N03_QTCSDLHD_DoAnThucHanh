@@ -26,11 +26,13 @@ namespace GUI
         GioHang_BUS gioHangBussiness = new GioHang_BUS();
         ChuyenBay_BUS chuyenbayBussiness = new ChuyenBay_BUS();
         int _id;
+        List<GioHang> gioHang = new List<GioHang>();
         public XemGioHang(int id)
         {
             InitializeComponent();
             HienThiThongTinGioHang(id);
             _id = id;
+            dgvGioHang.Items.Refresh();
         }
         private void HienThiThongTinGioHang(int id)
         {
@@ -42,8 +44,8 @@ namespace GUI
             }
             else
             { 
-                dgvGioHang.ItemsSource = gioHang; 
-            }  
+                dgvGioHang.ItemsSource = gioHang;
+            }
         }
 
         private void btn_DatVe_Click(object sender, RoutedEventArgs e)
@@ -65,6 +67,21 @@ namespace GUI
             XemChuyenBay xemChuyenBay_UI = new XemChuyenBay(_id);
             xemChuyenBay_UI.Show();
             this.Close();
+        }
+
+        private void btn_XoaChuyenBay_Click(object sender, RoutedEventArgs e)
+        {
+            GioHang chuyenBay = dgvGioHang.SelectedItem as GioHang;
+            if (gioHangBussiness.XoaGioHang(_id.ToString(), chuyenBay.id))
+            {
+                MessageBox.Show("Xóa thành công chuyến bay");
+               
+            }
+            else
+            {
+                MessageBox.Show("Xóa chuyến bay không thành công");
+            }
+            //dgvGioHang.Items.Refresh();
         }
     }
 }

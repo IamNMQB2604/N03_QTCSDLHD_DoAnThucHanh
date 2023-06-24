@@ -104,7 +104,7 @@ namespace GUI
 
                 HanhKhach tempHanhKhach = new HanhKhach();
                 tempHanhKhach.hoTen = TextBox_hoTen.Text;
-                tempHanhKhach.quocTich = combobox_maQuocGia.Text;
+                tempHanhKhach.quocTich = combobox_quocTich.Text;
                 tempHanhKhach.hanhLy = tempHanhLy;
                 tempHanhKhach.choNgoi = tempChoNgoi;
                 tempHanhKhach.gioiTinh = combobox_gioiTinh.Text;
@@ -186,10 +186,16 @@ namespace GUI
             List<VeMayBay> dsVeMayBay= new List<VeMayBay>();
             dsVeMayBay = _VeMayBay_BUS.LayTatCaThongTinVe();
             List<int>idVe=new List<int>();
-
-            for(int i=0;i<dsVeMayBay.Count;i++)
+            if (dsVeMayBay == null)
             {
-                idVe.Add(dsVeMayBay[i]._id);
+                idVe.Add(0);
+            }
+            else
+            {
+                for (int i = 0; i < dsVeMayBay.Count; i++)
+                {
+                    idVe.Add(dsVeMayBay[i]._id);
+                }
             }
             int maxNumber=idVe.Max();
             _VeMayBay._id = maxNumber+1;

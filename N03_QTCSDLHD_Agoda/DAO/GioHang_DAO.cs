@@ -39,5 +39,16 @@ namespace DAO
                 return dsgioHang;
             }
         }
+        public bool XoaGioHang_DB(string idKhachHang, string idChuyenBay)
+        {
+            // Kết nối đến Redis
+            var redisConnectionString = "localhost:6379"; // Thay thế bằng thông tin máy chủ Redis của bạn
+            var redis = ConnectionMultiplexer.Connect(redisConnectionString);
+            var db = redis.GetDatabase();
+
+            // Xóa trường từ hash và trả về kết quả thành công hoặc không thành công
+            bool result = db.HashDelete(idKhachHang, idChuyenBay);
+            return result;
+        }
     }
 }
