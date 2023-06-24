@@ -241,16 +241,10 @@ namespace GUI
                         }
                         else
                         {
-                            if (danhSachChuyenBayTemp[0].hangHangKhong != danhSachChuyenBayTemp[1].hangHangKhong)
-                            {
-                                MessageBox.Show("Chuyến bay Khứ Hồi không cho phép chọn 2 chuyến bay không cùng hãng.   Nhập từ khóa tìm kiếm hãng hàng không và chọn lại", "Thông Báo", MessageBoxButton.OK);
-                            }
-                            else
-                            {
+                            
                                 XemChiTietChuyenBay xemChiTiet_UI = new XemChiTietChuyenBay(_id, danhSachChuyenBayTemp);
                                 xemChiTiet_UI.Show();
                                 this.Close();
-                            }
                         }
                     }
                 }

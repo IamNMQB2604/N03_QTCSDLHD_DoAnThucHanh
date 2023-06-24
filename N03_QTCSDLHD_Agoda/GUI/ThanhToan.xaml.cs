@@ -48,7 +48,7 @@ namespace GUI
 
 
             _VeMayBay_BUS.themCacVeMayBay(_veMayBay);
-            MessageBox.Show(_veMayBay.chuyenBay[0].hangHangKhong);
+            MessageBox.Show("ĐẶT VÉ THÀNH CÔNG");
 
             
             

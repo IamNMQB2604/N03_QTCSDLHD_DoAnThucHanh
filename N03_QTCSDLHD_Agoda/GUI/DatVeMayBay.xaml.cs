@@ -27,12 +27,29 @@ namespace GUI
         List<HanhKhach> dsHanhKhach = new List<HanhKhach>();
         VeMayBay _VeMayBay = new VeMayBay();
         VeMayBay_BUS _VeMayBay_BUS = new VeMayBay_BUS();
+
+        int temp_maChuyenBay = 0;
         public DatVeMayBay(int id, List<ChuyenBay> chuyenBay)
         {
             InitializeComponent();
+
+            if(dsHanhKhach.Count == 0)
+            {
+                btn_huyHanhKhach.IsEnabled = false;
+            }
+            btn_ThanhToan.IsEnabled = false;
+            
+
             _id_NguoiDung = id; //gan gia tri cua id NguoiDung vao bien cuc bo
-            HienThiThongTinChuyenBay(chuyenBay);
+            
             dschuyenBay = chuyenBay;
+            HienThiThongTinChuyenBay(dschuyenBay[0]);
+            
+            
+            btn_datVeKhuHoi.IsEnabled = false;
+            
+            temp_maChuyenBay = dschuyenBay[0]._id;
+            //TextBox_maChuyenBay.Text = dschuyenBay[0]._id.ToString();
         
 ;        }
 
@@ -49,21 +66,18 @@ namespace GUI
                 + "Hạng vé: " + chuyenBay.hangVe + "\n";
             return thongTinChuyenBay;
         }
-        private void HienThiThongTinChuyenBay(List<ChuyenBay> chuyenBay) 
+        private void HienThiThongTinChuyenBay(ChuyenBay chuyenBay) 
         {
-            List<string> thongTinChuyenBay = new List<string>();
-            for (int i = 0; i < chuyenBay.Count; i++)
-            {
-                thongTinChuyenBay.Add(ThongTinChuyenBay(chuyenBay[i]));
-            }
-            if (thongTinChuyenBay.Count < 2)
-            {
-                tbChiTietChuyenBay.Text = "Chuyến Bay Đi" + '\n' + thongTinChuyenBay[0];
-            }
-            else
-            {
-                tbChiTietChuyenBay.Text = "Chuyến Bay Đi" + '\n' + thongTinChuyenBay[0] + "Chuyến Bay Về" + '\n' + thongTinChuyenBay[1];
-            }
+            string thongTinChuyenBay;
+            
+            
+            thongTinChuyenBay = ThongTinChuyenBay(chuyenBay);
+            
+            
+            
+            tbChiTietChuyenBay.Text = "Chuyến Bay " + '\n' + thongTinChuyenBay;
+            
+           
         }
         private void btn_QuayLai_Click(object sender, RoutedEventArgs e)
         {
@@ -74,32 +88,75 @@ namespace GUI
         }
         private void btn_themHanhKhach_Click(object sender, RoutedEventArgs e)
         {
-            HanhLy tempHanhLy = new HanhLy();
-            tempHanhLy.soKg = int.Parse(combobox_soKg.Text);
-            tempHanhLy.giaTien = int.Parse(TextBox_hanhLyThanhTien.Text) * tempHanhLy.soKg;
 
-            ChoNgoi tempChoNgoi = new ChoNgoi();
-            tempChoNgoi.maGhe = combobox_maGhe.Text;
-            tempChoNgoi.giaTien = int.Parse(TextBox_maGheThanhTien.Text);
 
-            HanhKhach tempHanhKhach = new HanhKhach();
-            tempHanhKhach.hoTen = TextBox_hoTen.Text;
-            tempHanhKhach.quocTich = combobox_maQuocGia.Text;
-            tempHanhKhach.hanhLy = tempHanhLy;
-            tempHanhKhach.choNgoi = tempChoNgoi;
-            tempHanhKhach.gioiTinh = combobox_gioiTinh.Text;
-            tempHanhKhach.ngaySinh = datapicker_ngaySinh.Text;
 
-            //MessageBox.Show(tempHanhLy.soKg.ToString());
+            if (TextBlock_hoTen.Text != "" && TextBlock_gioiTinh.Text != "" && datapicker_ngaySinh.SelectedDate != null && combobox_maQuocGia.SelectedItem != null
+                && combobox_maGhe.SelectedItem != null && combobox_soKg.SelectedItem != null)
+            {
+                HanhLy tempHanhLy = new HanhLy();
+                tempHanhLy.soKg = int.Parse(combobox_soKg.Text);
+                tempHanhLy.giaTien = int.Parse(TextBox_hanhLyThanhTien.Text) * tempHanhLy.soKg;
 
-            dsHanhKhach.Add(tempHanhKhach);
-            dgvHanhKhach.ItemsSource = dsHanhKhach;
-            dgvHanhKhach.Items.Refresh();
+                ChoNgoi tempChoNgoi = new ChoNgoi();
+                tempChoNgoi.maGhe = combobox_maGhe.Text;
+                tempChoNgoi.giaTien = int.Parse(TextBox_maGheThanhTien.Text);
+
+                HanhKhach tempHanhKhach = new HanhKhach();
+                tempHanhKhach.hoTen = TextBox_hoTen.Text;
+                tempHanhKhach.quocTich = combobox_maQuocGia.Text;
+                tempHanhKhach.hanhLy = tempHanhLy;
+                tempHanhKhach.choNgoi = tempChoNgoi;
+                tempHanhKhach.gioiTinh = combobox_gioiTinh.Text;
+                tempHanhKhach.ngaySinh = datapicker_ngaySinh.Text;
+                tempHanhKhach.maChuyenBay = temp_maChuyenBay;
+
+                //MessageBox.Show(tempHanhLy.soKg.ToString());
+
+                dsHanhKhach.Add(tempHanhKhach);
+                dgvHanhKhach.ItemsSource = dsHanhKhach;
+                dgvHanhKhach.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("VUI LÒNG ĐIỀN ĐỦ THÔNG TIN");
+            }
+
+            if(dschuyenBay.Count < 2) {
+                if (dsHanhKhach.Count > 0 && temp_maChuyenBay == dschuyenBay[0]._id)
+                {
+                    btn_ThanhToan.IsEnabled = true;
+                    btn_huyHanhKhach.IsEnabled = true;
+                }
+            }
+            else
+            {
+                if(dsHanhKhach.Count > 0)
+                {
+                    btn_datVeKhuHoi.IsEnabled = true;
+                    btn_huyHanhKhach.IsEnabled=true; 
+                }
+                if (temp_maChuyenBay == dschuyenBay[1]._id)
+                {
+                    for (int i = 0; i < dsHanhKhach.Count; i++)
+                    {
+                        if (dsHanhKhach[i].maChuyenBay == temp_maChuyenBay)
+                        {
+                            btn_ThanhToan.IsEnabled = true; break;
+                        }
+                    }
+                }
+            }
+            
+
+
+           
 
         }
 
         private void btn_huyHanhKhach_Click(object sender, RoutedEventArgs e)
         {
+            
 
             for (int i = 0; i < dgvHanhKhach.Items.Count; i++)
             {
@@ -113,13 +170,23 @@ namespace GUI
             dgvHanhKhach.ItemsSource = dsHanhKhach;
             dgvHanhKhach.Items.Refresh();
             MessageBox.Show(dsHanhKhach.Count.ToString());
+            if (dsHanhKhach.Count == 0)
+            {
+                temp_maChuyenBay = dschuyenBay[0]._id;
+                HienThiThongTinChuyenBay(dschuyenBay[0]);
+                btn_huyHanhKhach.IsEnabled = false;
+                btn_ThanhToan.IsEnabled = false;
+                btn_datVeKhuHoi.IsEnabled = false;
+            }
         }
 
         private void btn_ThanhToan_Click(object sender, RoutedEventArgs e)
         {
+            
             List<VeMayBay> dsVeMayBay= new List<VeMayBay>();
             dsVeMayBay = _VeMayBay_BUS.LayTatCaThongTinVe();
             List<int>idVe=new List<int>();
+
             for(int i=0;i<dsVeMayBay.Count;i++)
             {
                 idVe.Add(dsVeMayBay[i]._id);
@@ -133,6 +200,14 @@ namespace GUI
             _VeMayBay.chuyenBay = dschuyenBay;
             _VeMayBay.hanhKhach = dsHanhKhach;
 
+            for (int i = 0; i < dsHanhKhach.Count; i++)
+            {
+                _VeMayBay.tongGiaTien = _VeMayBay.tongGiaTien + dsHanhKhach[i].choNgoi.giaTien
+                                        + dsHanhKhach[i].hanhLy.soKg * dsHanhKhach[i].hanhLy.giaTien;
+            };
+
+
+
             //MessageBox.Show(_VeMayBay.chuyenBay[0].hangHangKhong);
 
             ThanhToan thanhToan_UI = new ThanhToan(_id_NguoiDung, _VeMayBay);
@@ -145,6 +220,16 @@ namespace GUI
             XemGioHang xemGioHang_UI = new XemGioHang(_id_NguoiDung);
             xemGioHang_UI.Show();
             this.Close();
+        }
+
+        private void btn_datVeKhuHoi_Click(object sender, RoutedEventArgs e)
+        {
+            
+            HienThiThongTinChuyenBay(dschuyenBay[1]);
+            temp_maChuyenBay = dschuyenBay[1]._id;
+            //TextBlock_MaChuyenBay.Text = dschuyenBay[1]._id.ToString();
+            btn_ThanhToan.IsEnabled = true;
+            
         }
     }
 }

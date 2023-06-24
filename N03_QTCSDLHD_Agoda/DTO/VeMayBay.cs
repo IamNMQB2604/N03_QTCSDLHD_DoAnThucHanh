@@ -37,5 +37,8 @@ namespace DTO
         [BsonElement("ngayDatVe")]
         public string? ngayDatVe { get; set; }
 
+        [BsonElement("tongGiaTien")]
+        public int tongGiaTien { get; set; }
+
     }
 }

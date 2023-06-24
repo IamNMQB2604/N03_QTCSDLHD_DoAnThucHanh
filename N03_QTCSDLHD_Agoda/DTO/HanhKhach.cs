@@ -23,6 +23,9 @@ namespace DTO
         [BsonElement("quocTich")]
         public string? quocTich { get; set; }
 
+        [BsonElement("maChuyenBay")]
+        public int maChuyenBay { get; set; }
+
         [BsonElement("hanhLy")]
         public HanhLy? hanhLy { get; set; }
 
