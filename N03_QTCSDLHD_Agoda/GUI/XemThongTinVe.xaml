@@ -23,7 +23,7 @@
                   >
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Mã Vé Máy Bay"
+                <DataGridTextColumn Header="Mã Đặt Chỗ"
                                     Binding="{Binding _id}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Mã Quốc Gia"
                                     Binding="{Binding maQuocGia}"></DataGridTextColumn>

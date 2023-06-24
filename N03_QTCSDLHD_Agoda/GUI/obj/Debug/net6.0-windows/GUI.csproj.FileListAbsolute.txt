@@ -175,3 +175,5 @@ D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\obj\Debug\net6.0-windows\Tha
 D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\bin\Debug\net6.0-windows\Pipelines.Sockets.Unofficial.dll
 D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\bin\Debug\net6.0-windows\StackExchange.Redis.dll
 D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\bin\Debug\net6.0-windows\System.IO.Pipelines.dll
+D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\obj\Debug\net6.0-windows\XemChiTietVeMayBay.g.cs
+D:\N03_QTCSDLHD_DoAnThucHanh\N03_QTCSDLHD_Agoda\GUI\obj\Debug\net6.0-windows\XemChiTietVeMayBay.baml

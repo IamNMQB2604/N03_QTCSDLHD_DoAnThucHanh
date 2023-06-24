@@ -27,6 +27,7 @@ namespace GUI
         {
             InitializeComponent();
             HienThiThongTinVe(id);
+            _id = id;
         }
         private void HienThiThongTinVe(int id)
         {
@@ -45,20 +46,17 @@ namespace GUI
         }
         private void btn_ChiTietVeMayBay_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("_id:" + _id);
             VeMayBay? VMB_Selected = dgvThongTinVe.SelectedItem as VeMayBay;
-
-            MessageBox.Show("VMB SELECTED " + VMB_Selected);
-            //XemChiTietVeMayBay xemChiTietVe_UI = new XemChiTietVeMayBay(_id, VMB_Selected);
-            //xemChiTietVe_UI.Show();
-            //this.Close();
-
-
+            XemChiTietVeMayBay xemChiTietVe_UI = new XemChiTietVeMayBay(_id,VMB_Selected);
+            xemChiTietVe_UI.Show();
+            this.Close();
         }
 
         private void btn_QuayLai_Click(object sender, RoutedEventArgs e)
         {
-
+            XemChuyenBay xemChuyenBay_UI = new XemChuyenBay(_id);
+            xemChuyenBay_UI.Show();
+            this.Close();
         }
 
     }

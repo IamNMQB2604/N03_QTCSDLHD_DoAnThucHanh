@@ -22,6 +22,9 @@
     <Compile Update="XemChiTietChuyenBay.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="XemChiTietVeMayBay.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="XemChuyenBay.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="XemChiTietChuyenBay.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="XemChiTietVeMayBay.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="XemChuyenBay.xaml">
