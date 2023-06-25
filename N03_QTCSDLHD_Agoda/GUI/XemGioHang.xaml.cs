@@ -32,11 +32,10 @@ namespace GUI
             InitializeComponent();
             HienThiThongTinGioHang(id);
             _id = id;
-            dgvGioHang.Items.Refresh();
         }
         private void HienThiThongTinGioHang(int id)
         {
-            List<GioHang> gioHang = new List<GioHang>();
+            //List<GioHang> gioHang = new List<GioHang>();
             gioHang = gioHangBussiness.LayThongTinGioHang(id);
             if (gioHang == null)
             {
@@ -45,6 +44,7 @@ namespace GUI
             else
             { 
                 dgvGioHang.ItemsSource = gioHang;
+                dgvGioHang.Items.Refresh();
             }
         }
 
@@ -71,9 +71,11 @@ namespace GUI
 
         private void btn_XoaChuyenBay_Click(object sender, RoutedEventArgs e)
         {
+            
             GioHang chuyenBay = dgvGioHang.SelectedItem as GioHang;
             if (gioHangBussiness.XoaGioHang(_id.ToString(), chuyenBay.id))
             {
+                gioHang.Remove(chuyenBay);
                 MessageBox.Show("Xóa thành công chuyến bay");
                
             }
@@ -81,7 +83,8 @@ namespace GUI
             {
                 MessageBox.Show("Xóa chuyến bay không thành công");
             }
-            //dgvGioHang.Items.Refresh();
+            dgvGioHang.ItemsSource = gioHang;
+            dgvGioHang.Items.Refresh();
         }
     }
 }
