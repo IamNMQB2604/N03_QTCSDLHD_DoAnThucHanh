@@ -59,5 +59,19 @@ namespace GUI
             this.Close();
         }
 
+        private void btn_TimKiem_Click(object sender, RoutedEventArgs e)
+        {
+            List<VeMayBay> dsVeMayBay = new List<VeMayBay>();
+            if (dataPickerNgayDat.SelectedDate==null)
+            {
+                MessageBox.Show("Nhập ngày đặt vé để tìm kiếm", "Thông Báo", MessageBoxButton.OK);
+            }    
+            else
+            {
+                dsVeMayBay = VeMayBay.TimKiemThongTinVeMayBay(dataPickerNgayDat.SelectedDate.ToString());
+                dgvThongTinVe.ItemsSource = dsVeMayBay;
+                dgvThongTinVe.Items.Refresh();
+            }    
+        }
     }
 }

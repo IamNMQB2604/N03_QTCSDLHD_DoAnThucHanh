@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="XemThongTinVe" Height="450" Width="800">
+        Title="XemThongTinVe" Height="500" Width="800">
     <Grid>
         <Label Content="VÉ MÁY BAY" HorizontalAlignment="Left" Margin="329,25,0,0" VerticalAlignment="Top" Height="38" Width="160" FontFamily="Bold" FontSize="24" FontWeight="Bold" Foreground="Red"/>
         <DataGrid x:Name="dgvThongTinVe" 
-                  HorizontalAlignment="Left" 
-                  Height="276" 
-                  VerticalAlignment="Center" 
+                  HorizontalAlignment="Center" 
+                  Height="219" 
+                  VerticalAlignment="Top" 
                   Width="780" 
                   FontSize="16"
                   CanUserAddRows="False"
@@ -19,7 +19,7 @@
                   SelectionUnit="FullRow"
                   IsReadOnly="True"
                   AutoGenerateColumns="False"
-                  Background="{DynamicResource MaterialDesignBackground}" RowBackground="#FFE8EDE0"
+                  Background="{DynamicResource MaterialDesignBackground}" RowBackground="#FFE8EDE0" Margin="0,167,0,0"
                   >
 
             <DataGrid.Columns>
@@ -36,7 +36,10 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="XEM CHI TIẾT" HorizontalAlignment="Left" Margin="198,355,0,0" VerticalAlignment="Top" Height="47" FontWeight="Bold"  Width="175" Click="btn_ChiTietVeMayBay_Click" Background="Green" />
-        <Button Content="QUAY LẠI" HorizontalAlignment="Left" Margin="429,356,0,0" VerticalAlignment="Top" Height="46" FontWeight="Bold" Width="170" Click="btn_QuayLai_Click" Background="Red"/>
+        <Button Content="XEM CHI TIẾT" HorizontalAlignment="Left" Margin="197,406,0,0" VerticalAlignment="Top" Height="47" FontWeight="Bold"  Width="175" Click="btn_ChiTietVeMayBay_Click" Background="Green" />
+        <Button Content="QUAY LẠI" HorizontalAlignment="Left" Margin="409,406,0,0" VerticalAlignment="Top" Height="46" FontWeight="Bold" Width="170" Click="btn_QuayLai_Click" Background="Red"/>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="31,111,0,0" TextWrapping="Wrap" Text="Ngày Đặt Vé" VerticalAlignment="Top" Width="120" FontSize="15"/>
+        <DatePicker  x:Name="dataPickerNgayDat"  HorizontalAlignment="Left" Height="32" Margin="133,95,0,0" VerticalAlignment="Top" Width="134"/>
+        <Button x:Name="btn_TimKiem" Content="TÌM KIẾM" HorizontalAlignment="Left" Height="33" Margin="303,105,0,0" VerticalAlignment="Top" Width="106" FontWeight="Bold" Click="btn_TimKiem_Click"/>
     </Grid>
 </Window>

@@ -65,5 +65,29 @@ namespace DAO
                 return danhSachVeMayBay;
             }
         }
+        public List<VeMayBay> TimKiemThongTinVeMayBay_DB(string ngayDat)
+        {
+            List<VeMayBay> danhSachVeMayBay = new List<VeMayBay>();
+
+            // Kết nối tới cơ sở dữ liệu MongoDB
+            var client = new MongoClient("mongodb://127.0.0.1:27017");
+            var db = client.GetDatabase("QuanLyVeMayBay");
+            var collection = db.GetCollection<VeMayBay>("VeMayBay");
+
+            // Tạo một filter để tìm các vé máy bay có idnguoidung tương ứng
+            var filter = Builders<VeMayBay>.Filter.Eq("ngayDatVe", ngayDat);
+
+            // Thực hiện truy vấn và lấy danh sách vé máy bay
+            var veMayBayCursor = collection.Find(filter);
+            danhSachVeMayBay = veMayBayCursor.ToList();
+            if (danhSachVeMayBay.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return danhSachVeMayBay;
+            }
+        }
     }
 }

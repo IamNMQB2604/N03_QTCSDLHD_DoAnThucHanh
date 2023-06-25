@@ -23,5 +23,9 @@ namespace BUS
         {
             return datVeMayBay.LayThongTinVeMayBay_DB(id);
         }
+        public List<VeMayBay>TimKiemThongTinVeMayBay(string ngayDat)
+        {
+            return datVeMayBay.TimKiemThongTinVeMayBay_DB(ngayDat);
+        }
     }
 }
