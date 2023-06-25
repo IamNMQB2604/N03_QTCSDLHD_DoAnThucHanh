@@ -89,5 +89,19 @@ namespace DAO
                 return danhSachVeMayBay;
             }
         }
+
+        public List<ChoNgoi> ChoNgoiConLai(int maChuyenBay)
+        {
+            List<ChoNgoi> choNgois = new List<ChoNgoi>();
+            
+            ChoNgoi tempChoNgoi = new ChoNgoi();
+            //choNgois.Add()
+            // Kết nối tới cơ sở dữ liệu MongoDB
+            var client = new MongoClient("mongodb://127.0.0.1:27017");
+            var db = client.GetDatabase("QuanLyVeMayBay");
+            var collection = db.GetCollection<VeMayBay>("VeMayBay");
+
+            return choNgois;
+        }
     }
 }

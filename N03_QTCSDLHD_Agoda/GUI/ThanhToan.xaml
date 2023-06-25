@@ -10,12 +10,14 @@
         <Label x:Name="label_ThanhToan" Content="THANH TOÁN" HorizontalAlignment="Left" Margin="204,77,0,0" VerticalAlignment="Top" Height="32" Width="196" FontSize="20" HorizontalContentAlignment="Center" Background="White"/>
         <Label x:Name="label_TenThe" Content="TÊN THẺ" HorizontalAlignment="Left" Margin="144,167,0,0" VerticalAlignment="Top" Height="30" Width="118"/>
         <Label x:Name="label_soThe" Content="SỐ THẺ" HorizontalAlignment="Left" Margin="144,217,0,0" VerticalAlignment="Top" Height="30" Width="118"/>
-        <Label x:Name="label_ngayHetHan" Content="NGÀY HẾT HẠN" HorizontalAlignment="Left" Margin="144,283,0,0" VerticalAlignment="Top" Height="30" Width="118"/>
+        <Label x:Name="label_ngayHetHan" Content="NGÀY HẾT HẠN" HorizontalAlignment="Left" Margin="144,276,0,0" VerticalAlignment="Top" Height="30" Width="118"/>
         <TextBox x:Name="textbox_TenThe" HorizontalAlignment="Left" Margin="280,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textbox_SoThe" HorizontalAlignment="Left" Margin="280,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="datepicker_ngayHetHan" HorizontalAlignment="Left" Margin="280,273,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btn_thanhToan" Content="THANH TOÁN" HorizontalAlignment="Left" Margin="576,167,0,0" VerticalAlignment="Top" Height="30" Width="123" Click="btn_thanhToan_Click"/>
+        <DatePicker x:Name="datepicker_ngayHetHan" HorizontalAlignment="Left" Margin="280,266,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btn_thanhToan" Content="XÁC NHẬN" HorizontalAlignment="Left" Margin="603,327,0,0" VerticalAlignment="Top" Height="30" Width="123" Click="btn_thanhToan_Click"/>
         <Button x:Name="btn_QuayLai" Content="QUAY LẠI" HorizontalAlignment="Left" Margin="40,43,0,0" VerticalAlignment="Top" Click="btn_QuayLai_Click"/>
+        <Label x:Name="label_TongHoaDon" Content="TỔNG HÓA ĐƠN" HorizontalAlignment="Left" Margin="144,331,0,0" VerticalAlignment="Top" Height="30" Width="118"/>
+        <TextBox x:Name="textbox_TongHoaDon" HorizontalAlignment="Left" Margin="280,331,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

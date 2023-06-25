@@ -22,6 +22,8 @@ namespace GUI
     /// </summary>
     public partial class DatVeMayBay : Window
     {
+
+
         int _id_NguoiDung; // tao bien cuc bo nhan id NguoiDung 
         List<ChuyenBay> dschuyenBay = new List<ChuyenBay>();
         List<HanhKhach> dsHanhKhach = new List<HanhKhach>();
@@ -47,6 +49,7 @@ namespace GUI
             
             
             btn_datVeKhuHoi.IsEnabled = false;
+            TextBox_maChuyenBay.Text = dschuyenBay[0]._id.ToString();
             
             temp_maChuyenBay = dschuyenBay[0]._id;
             //TextBox_maChuyenBay.Text = dschuyenBay[0]._id.ToString();
@@ -114,6 +117,13 @@ namespace GUI
                 //MessageBox.Show(tempHanhLy.soKg.ToString());
 
                 dsHanhKhach.Add(tempHanhKhach);
+
+                //doan code loai bo so ghe da chon
+                
+                
+                combobox_maGhe.Items.Remove(tempChoNgoi.maGhe);
+                combobox_maGhe.Items.Refresh();
+
                 dgvHanhKhach.ItemsSource = dsHanhKhach;
                 dgvHanhKhach.Items.Refresh();
             }
@@ -232,6 +242,7 @@ namespace GUI
         {
             
             HienThiThongTinChuyenBay(dschuyenBay[1]);
+            TextBox_maChuyenBay.Text = dschuyenBay[1]._id.ToString();
             temp_maChuyenBay = dschuyenBay[1]._id;
             //TextBlock_MaChuyenBay.Text = dschuyenBay[1]._id.ToString();
             btn_ThanhToan.IsEnabled = true;

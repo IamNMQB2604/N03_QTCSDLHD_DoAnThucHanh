@@ -35,6 +35,7 @@ namespace GUI
             InitializeComponent();
             _veMayBay = veMayBay;
             _idNguoiDung = id_NguoiDung;
+            textbox_TongHoaDon.Text = veMayBay.tongGiaTien.ToString();
             danhSachChuyenBayTemp = veMayBay.chuyenBay;
         }
 

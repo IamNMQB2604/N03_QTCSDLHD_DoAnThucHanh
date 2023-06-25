@@ -9,11 +9,11 @@
     <Grid>
         <Label Content="ĐẶT VÉ MÁY BAY" HorizontalAlignment="Left" Margin="439,14,0,0" VerticalAlignment="Top" Height="38" Width="212" FontFamily="Bold" FontSize="24" FontWeight="Bold" Foreground="Red"/>
         <Button Content="QUAY LẠI" x:Name="btn_QuayLai" HorizontalAlignment="Left" Margin="37,14,0,0" VerticalAlignment="Top" Click="btn_QuayLai_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="32,322,0,0" TextWrapping="Wrap" x:Name="TextBlock_maQuocGia" Text="MÃ QUỐC GIA" VerticalAlignment="Top" Height="20" Width="75"/>
-        <TextBlock HorizontalAlignment="Left" Margin="32,352,0,0" TextWrapping="Wrap" x:Name="TextBlock_sdt" Text="SỐ ĐIỆN THOẠI" VerticalAlignment="Top" Height="20" Width="94"/>
-        <TextBox x:Name="TextBox_sdt" HorizontalAlignment="Left" Margin="131,347,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>
-        <TextBlock HorizontalAlignment="Left" Margin="32,382,0,0" TextWrapping="Wrap" x:Name="TextBlock_email" Text="EMAIL" VerticalAlignment="Top" Height="20" Width="94"/>
-        <TextBox x:Name="TextBox_email" HorizontalAlignment="Left" Margin="131,377,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>
+        <TextBlock HorizontalAlignment="Left" Margin="32,302,0,0" TextWrapping="Wrap" x:Name="TextBlock_maQuocGia" Text="MÃ QUỐC GIA" VerticalAlignment="Top" Height="20" Width="75"/>
+        <TextBlock HorizontalAlignment="Left" Margin="32,332,0,0" TextWrapping="Wrap" x:Name="TextBlock_sdt" Text="SỐ ĐIỆN THOẠI" VerticalAlignment="Top" Height="20" Width="94"/>
+        <TextBox x:Name="TextBox_sdt" HorizontalAlignment="Left" Margin="131,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>
+        <TextBlock HorizontalAlignment="Left" Margin="32,362,0,0" TextWrapping="Wrap" x:Name="TextBlock_email" Text="EMAIL" VerticalAlignment="Top" Height="20" Width="94"/>
+        <TextBox x:Name="TextBox_email" HorizontalAlignment="Left" Margin="131,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>
         <TextBox x:Name="tbChiTietChuyenBay"
             HorizontalAlignment="Left"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -83,7 +83,7 @@
         <Button x:Name="btn_themHanhKhach" Content="THÊM HÀNH KHÁCH" HorizontalAlignment="Center" Margin="0,168,0,0" VerticalAlignment="Top" FontSize="12" Width="148" Click="btn_themHanhKhach_Click"/>
         <TextBox x:Name="TextBox_hanhLyThanhTien" HorizontalAlignment="Left" Margin="789,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Text="2000"/>
         <TextBox x:Name="TextBox_maGheThanhTien" HorizontalAlignment="Left" Margin="789,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Text="200000"/>
-        <ComboBox x:Name="combobox_maQuocGia" HorizontalAlignment="Left" Margin="131,315,0,0" VerticalAlignment="Top" Width="189">
+        <ComboBox x:Name="combobox_maQuocGia" HorizontalAlignment="Left" Margin="131,295,0,0" VerticalAlignment="Top" Width="189">
             <ComboBoxItem Content="84"/>
             <ComboBoxItem Content="85"/>
             <ComboBoxItem Content="86"/>
@@ -160,7 +160,7 @@
         </ComboBox>
         <Button x:Name="btn_QuayLaiGioHang" Content="QUAY LẠI GIỎ HÀNG" HorizontalAlignment="Left" Margin="150,14,0,0" VerticalAlignment="Top" Width="170" Click="btn_QuayLaiGioHang_Click"/>
         <Button x:Name="btn_datVeKhuHoi" Content="TIẾP THEO" HorizontalAlignment="Left" Margin="732,169,0,0" VerticalAlignment="Top" Width="125" Click="btn_datVeKhuHoi_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="32,286,0,0" TextWrapping="Wrap" x:Name="TextBlock_MaChuyenBay" Text="MÃ CHUYẾN BAY" VerticalAlignment="Top" Height="20" Width="99"/>
-        <TextBox x:Name="TextBox_maChuyenBay" HorizontalAlignment="Left" Margin="225,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"/>
+        <TextBlock HorizontalAlignment="Left" Margin="32,266,0,0" TextWrapping="Wrap" x:Name="TextBlock_MaChuyenBay" Text="MÃ CHUYẾN BAY" VerticalAlignment="Top" Height="20" Width="99"/>
+        <TextBox x:Name="TextBox_maChuyenBay" HorizontalAlignment="Left" Margin="225,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"/>
     </Grid>
 </Window>
